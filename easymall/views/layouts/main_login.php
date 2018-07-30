@@ -1,24 +1,21 @@
 <?php
-/* @var $this \yii\web\View */
-/* @var $content string */
-
 use yii\helpers\Html;
 use app\assets\AppAssetLogin;
-
 AppAssetLogin::register($this);
 ?>
-<?php $this->beginPage() ?>
+
+<?php $this->beginPage(); ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html class="login-bg">
     <head>
         <meta charset="<?= Yii::$app->charset ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <?= Html::csrfMetaTags() ?>
         <title><?= Yii::$app->params['title']?></title>
         <?php $this->head() ?>
-        <?php if(isset($this->blocks['head'])) echo $this->blocks['head']?>
     </head>
-    <body class="login-layout">
+    <body>
         <?php $this->beginBody() ?>
             <?php echo $content; ?>
         <?php $this->endBody() ?>

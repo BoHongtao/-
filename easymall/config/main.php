@@ -16,7 +16,7 @@ return [
             'identityClass' => 'app\models\Operators',
             'enableAutoLogin' => true,
         ],
-        // //本地
+        //本地
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -27,18 +27,6 @@ return [
                 ],
             ],
         ],
-        //线上日志
-//        'log' => [
-//            'traceLevel' => YII_DEBUG ? 3 : 0,
-//            'targets' => [
-//                [
-//                    'logVars' => [],
-//                    'class' => 'yii\log\UDSTarget',
-//                    'levels' => ['trace', 'info', 'warning', 'error'],
-//                ],
-//            ],
-//        ],
-
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
@@ -59,10 +47,6 @@ return [
             'defaultRoles' => ['系统管理员'],
         ],
         'db' => require(__DIR__ . '/db.php'),
-        //配置缓存组件
-        'cache'=>[
-            'class'=>'yii\caching\FileCache'
-        ]
     ],
     'params' => $params,
 ];

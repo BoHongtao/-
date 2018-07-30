@@ -63,14 +63,9 @@ class Operators extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfa
     }
 
     public function validatePassword($inputPwd, $pwd) {
-        //echo $pwd;exit;
-//        if (Yii::$app->getSecurity()->validatePassword($password, $hash)) {
         if (Yii::$app->getSecurity()->validatePassword($inputPwd, $pwd)) {
-//            增加操作日志
-//            addLog($this->login_name, 1, 3, $this->id, '登录成功');
             return true;
         } else {
-//            addLog($this->login_name, 1, 3, $this->id, '登录失败:用户名或密码错误');
             return false;
         }
     }
