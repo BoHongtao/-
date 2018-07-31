@@ -45,7 +45,7 @@ class SiteController extends Controller {
             ],
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
-                'height' => 39,
+                'height' => 42,
                 'width' => 130,
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
                 'maxLength' => 5,
@@ -71,7 +71,7 @@ class SiteController extends Controller {
             $user->record_time = date('Y-m-d H:i:s');
             $user->last_login_ip = ip2long(Yii::$app->request->userIP);
             $user->save();
-            $this->actionMenu();
+            return $this->redirect(['home/index']);
         }
         return $this->render('login',[
             'model'=>$model

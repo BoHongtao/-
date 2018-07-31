@@ -21,13 +21,11 @@ class Operators extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfa
             [['password', 're_pwd'], 'string', 'max' => 16,'min' => 6,'on' => ['add','tourism']],
             [['password', 're_pwd'],'match','pattern' => "/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/",'message' => '密码必须包含字母和数字','on' => ['add','tourism']],
             [['password','operator_name'],'required','on' => 'tourism'],
-//            [['password'],'match','pattern' => "/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/",'message' => '密码必须包含字母和数字','on' => 'tourism'],
             [['operator_name'], 'required','on' =>['add','update']],
             [['operator_type'], 'integer'],
             [['record_time', 'last_login_time'], 'safe'],
-            [['operator_name', 'contact_name', 'contact_phone', 'wechat', 'password'], 'string', 'max' => 255],
+            [['operator_name', 'contact_name', 'password'], 'string', 'max' => 255],
             ['re_pwd', 'compare', 'compareAttribute' => 'password','on' => ['add','tourism'],'message'=>'与密码输入不一致'],
-//            [['contact_phone'], 'match', 'pattern' => '/^1[34578]\d{9}$/'],
         ];
     }
 
@@ -37,9 +35,6 @@ class Operators extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfa
             'operator_name' => '登录名',
             'operator_type' => '类型',
             'contact_name' => '联系人',
-            'contact_phone' => '联系电话',
-            'wechat' => '微信号',
-            'bank_name' => '银行名称',
             'password' => '密码',
             'new_pwd' => '新密码',
             're_pwd' => '确认密码',
@@ -53,6 +48,12 @@ class Operators extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfa
     public static function login($user) {
         $model = Operators::find()->where(['operator_name' => $user])->one();
         return $model;
+    }
+    /*
+     * 管理管理员信息表，根据id获取管理员信息
+     */
+    public function getOperatorinfos(){
+        return $this->hasOne(OperatorsInfo::className(),['operator_id'=>'id']);
     }
 
     public function comparePwd($attr, $params) {

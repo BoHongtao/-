@@ -1,58 +1,67 @@
 <?php
 use app\components\AjaxPager;
 ?>
-<table id="sample-table-1" class="table table-striped table-bordered table-hover">
-    <thead>
+<div class="row-fluid table">
+    <table class="table table-hover">
+        <thead>
         <tr>
-            <th class="center">序号</th>
-            <th>登录名</th>
-            <th>角色</th>
-            <th class="hidden-480">联系人</th>
-            <th class="hidden-480">电话</th>
-            <th>
-                <i class="icon-time bigger-110 hidden-480"></i>
-                登陆时间
+            <th class="span4 sortable">
+                <span class="line"></span> 序号
             </th>
-            <th>操作</th>
+            <th class="span3 sortable">
+                <span class="line"></span>头像
+            </th>
+            <th class="span2 sortable">
+                <span class="line"></span>角色
+            </th>
+            <th class="span2 sortable">
+                <span class="line"></span>真实姓名
+            </th>
+            <th class="span2 sortable">
+                <span class="line"></span>联系电话
+            </th>
+            <th class="span3 sortable align-right">
+                <span class="line"></span>操作
+            </th>
         </tr>
-    </thead>
+        </thead>
 
-    <tbody>
-        <?php if (empty($model)): ?>
-            <tr>
-                <td colspan="13" class="text-center">暂无数据</td>
-            </tr>
-        <?php else: ?>
-            <?php foreach ($model as $key => $result): ?>
-                <tr>
-                    <td class="center"><?= $key + 1 + $pager->offset ?></td>
-                    <td><?= $result->operator_name ?></td>
-                    <td class="hidden-480"><?= isset($roles[$result['auth']['item_name']])?$roles[$result['auth']['item_name']]:""; ?></td>
-                    <td><?= $result->contact_name ?></td>
-                    <td><?= $result->contact_phone ?></td>
-                    <td class="hidden-480">
-                        <span class="label label-sm label-warning"><?= $result->record_time ?></span>
-                    </td>
-                    <td>
-                        <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-                            <?php if (\app\components\Utils::checkAccess("operators/update")): ?>
-                                <a href="<?= yii\helpers\Url::toRoute(['operators/update','id' => $result->id]) ?>" class="btn btn-primary btn-xs" style="display: block"> 编辑</a>
-                            <?php endif; ?>
-                            <?php if (\app\components\Utils::checkAccess("operators/reset-pwd")): ?>
-                                <a href="javascript:void(0)"  class="btn btn-info btn-xs" style="margin-left: 5px;display: block" onclick="resetPwd('<?php echo $result['id'] ?>')"> 重置密码</a>
-                            <?php endif; ?>
-                            <?php if (\app\components\Utils::checkAccess("operators/update")): ?>
-                                <a href="#" onclick="del(<?= $result->id ?>)" class="btn btn-default btn-xs" style="display: block"> 删除</a>
-                            <?php endif; ?>
-                        </div>
-                    </td>
-                </tr>
+        <tbody>
+        <!-- row -->
+        <tr class="first">
+            <?php foreach ($OperatorsInfos as $key => $operator): ?>
+                <td><?= $key + 1 + $pager->offset ?></td>
+                <td>
+                    <img src="<?= $operator->head_pic ?>" class="img-circle avatar hidden-phone" />
+                    <a href="user-profile.html" class="name"><?= $operator->operator_name ?></a>
+                    <span class="subtext"><?= $operator->company ?></span>
+                </td>
+                <td>
+                    <?= isset($roles[$operator['auth']['item_name']])?$roles[$operator['auth']['item_name']]:""; ?>
+                </td>
+                <td>
+                    <?= $operator->truename ?>
+                </td>
+                <td class="align-right">
+                    <a href="#"><?= $operator->contact_phone ?></a>
+                </td>
+                <td>
+                    <span>重置密码</span>
+                    <span>删除</span>
+                    <span>编辑</span>
+                </td>
             <?php endforeach; ?>
-        <?php endif; ?>
-    </tbody>
-</table>
-<?php
-echo AjaxPager::widget([
-    'pagination' => $pager
-]);
-?>
+        </tr>
+        <!-- row -->
+        </tbody>
+    </table>
+</div>
+
+<div class="pagination pull-right">
+    <?php
+        echo AjaxPager::widget([
+            'pagination' => $pager
+        ]);
+    ?>
+</div>
+

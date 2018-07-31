@@ -14,28 +14,25 @@ class OperatorsController extends BaseController
     {
         return $this->render('index');
     }
+    /*
+     * 管理员列表
+     * @param  $operator_name  要查找管理员的名字，为空查找所有
+     */
     public function actionData($operator_name = '')
     {
-        $query = $this->getQuery($operator_name);
-        $pager = new \yii\data\Pagination([
-            'totalCount' => $query->count(),
-            'pageSize' => $this->pageSize,
-            'route' => 'operators/data'
-        ]);
-        $model = $query->offset($pager->offset)->limit($pager->limit)->all();
+        //获取管理员及关联管理员的信息
+        $query = Operators::find()->joinWith('operatorinfos')->filterWhere(['operator_name'=>$operator_name]);
+        $pager = $this->Pager($query,'operators/data');
+        $OperatorsInfos = $query->offset($pager->offset)->limit($pager->limit)->asArray()->all();
+        var_dump($OperatorsInfos);exit();
+        //角色id与角色名字映射关系
         $rules = Yii::$app->authManager->getRoles();
         $rules = array_column($rules, "description", "name");
-        return $this->renderPartial('_list', [
-            'model' => $model,
-            'pager' => $pager,
-            "roles" => $rules
+        return $this->renderPartial('_list',[
+            'OperatorsInfos'=>$OperatorsInfos,
+            'pager'=>$pager,
+            '$rules'=>$rules
         ]);
-    }
-    public function getQuery($operator_name)
-    {
-        $query = Operators::find()->where(['operator_type' => 1]);
-        $operator_name and $query->andWhere(['like', 'operator_name', $operator_name]);
-        return $query;
     }
 
     public function actionAdd()
@@ -54,7 +51,6 @@ class OperatorsController extends BaseController
                 $auth = Yii::$app->authManager;
                 $role = $auth->getRole($data['Operators']['role_id']);
                 if (!$auth->assign($role, $model->id)) throw new \Exception("管理员角色配置失败！");
-                recordLog('添加了管理员' . $model->operator_name, 1);
                 $tr->commit();
                 return ['code' => 0, 'desc' => '添加成功'];
             } catch (\Exception $e) {
@@ -78,7 +74,6 @@ class OperatorsController extends BaseController
         if (Yii::$app->request->post()) {
             $this->returnJson();
             if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->updatePwd($model->newpwd)) {
-                recordLog('修改了管理员' . $username . '的密码', 1);
                 return ['code' => 0, 'msg' => '密码修改成功'];
             }
             return ['code' => 9999, 'msg' => $model->errors];
@@ -102,7 +97,6 @@ class OperatorsController extends BaseController
                     ':id' => $id
                 ])->execute();
                 if ($rs) {
-                    recordLog('重置了管理员' . $model['operator_name'] . '的密码', 1);
                     return [
                         'code' => 0,
                         'desc' => '重置密码成功',
@@ -134,7 +128,6 @@ class OperatorsController extends BaseController
                 ];
             }
             if ($model->save()) {
-                recordLog('修改了管理员' . $model->operator_name, 1);
                 return [
                     'code' => 0,
                     'desc' => '信息修改成功'

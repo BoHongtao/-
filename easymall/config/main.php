@@ -9,7 +9,7 @@ return [
     'language' => 'zh-CN',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'defaultRoute' => 'menu/index',
+    'defaultRoute' => 'home/index',
     'controllerNamespace' => 'app\controllers',
     'components' => [
         'user' => [

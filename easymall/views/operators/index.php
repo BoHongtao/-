@@ -1,92 +1,76 @@
-<?php
-use yii\helpers\Url;
-$this->params['breadcrumbs'][] = ["label"=>"管理员","url"=>Url::toRoute("operators/index")];
-$this->params['breadcrumbs'][] = '列表';
-?>
-<div class="main-content">
-    <div class="page-content">
-        <div class="page-header">
-            <form id="searchform" class="form-inline" role="form">
-                <div class="form-group">
-                    <label class="sr-only" for="exampleInputOperid">登录名</label>
-                    <input name="operator_name"  type="text" class="form-control" id="exampleInputOperid" placeholder="登录名">
-                </div>
-                <button type="button" class="btn btn-warning btn-sm tooltip-warning" onclick="search()"><i class="icon-search"></i> 搜索</button>
-                <?php if (\app\components\Utils::checkAccess("operators/add")): ?>
-                    <a href="<?= yii\helpers\Url::toRoute(['operators/add']) ?>" class="btn btn-primary btn-sm tooltip-info"><i class="icon-plus"></i> 增加</a>
-                <?php endif; ?>
-            </form>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="table-responsive" id="unseen">
-                    <?php echo $this->context->actionData() ?>
+<link rel="stylesheet" href="static/css/compiled/user-list.css" type="text/css" media="screen" />
+<link href="static/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
+<div class="content">
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="users-list">
+            <div class="row-fluid header">
+                <h3>Users</h3>
+                <div class="span10 pull-right">
+                    <input type="text" class="span5 search" placeholder="Type a user's name..."/>
+                    <div class="ui-dropdown">
+                        <div class="head" data-toggle="tooltip" title="Click me!">
+                            Filter users
+                            <i class="arrow-down"></i>
+                        </div>
+                        <div class="dialog">
+                            <div class="pointer">
+                                <div class="arrow"></div>
+                                <div class="arrow_border"></div>
+                            </div>
+                            <div class="body">
+                                <p class="title">
+                                    Show users where:
+                                </p>
+                                <div class="form">
+                                    <select>
+                                        <option/>
+                                        Name
+                                        <option/>
+                                        Email
+                                        <option/>
+                                        Number of orders
+                                        <option/>
+                                        Signed up
+                                        <option/>
+                                        Last seen
+                                    </select>
+                                    <select>
+                                        <option/>
+                                        is equal to
+                                        <option/>
+                                        is not equal to
+                                        <option/>
+                                        is greater than
+                                        <option/>
+                                        starts with
+                                        <option/>
+                                        contains
+                                    </select>
+                                    <input type="text"/>
+                                    <a class="btn-flat small">Add filter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="new-user.html" class="btn-flat success pull-right">
+                        <span>&#43;</span>
+                        新建管理员
+                    </a>
                 </div>
             </div>
+            <!-- Users table -->
+            <?php echo $this->context->actionData() ?>
+            <!-- end users table -->
         </div>
     </div>
 </div>
+<!-- end main container -->
 <?php $this->beginBlock('script') ?>
 <script type="text/javascript">
-    function search() {
-        $.ajax({
-            url: "<?php echo Url::to(['operators/data']) ?>",
-            data: $('#searchform').serialize(),
-            beforeSend: function (xhr) {
-                $('#unseen').append('<div style="text-align:center;"><span class="ui-icon icon-refresh green"></span></div>');
-            },
-            success: function (data) {
-                $('#unseen').html(data);
-            },
-            complete: function (xhr, sc) {
-                $('#loading').remove();
-            }
-        });
-    }
-    function showDetail(id) {
-        fbwindow('业务员详情', "<?php echo \yii\helpers\Url::to(['orgsales/detail']) ?>&id=" + id, 'l');
-    }
-    function delDetail(id) {
-        fbwindow('确定删除业务员吗？', "<?php echo \yii\helpers\Url::to(['manager/del-detail']) ?>&id=" + id, 'l');
-    }
-    function modifyInfo(id) {
-        fbwindow('信息修改', "<?php echo \yii\helpers\Url::to(['orgsales/update']) ?>&id=" + id, 'l');
-    }
-    function del(id) {
-        closeModal();
-        var flag = confirm('您确定删除此管理员吗？');
-        if (flag) {
-            $.ajax({
-                url: "<?= Url::toRoute('operators/del') ?>",
-                type: 'post',
-                data: {id: id},
-                success: function (data) {
-                    if (data.code == 200) {
-                        showToast('success', '删除业务员成功', '', 2000);
-                        search();
-                    } else{
-                        showToast('error', '删除业务员失败', data.desc, 2000);
-                    }
-                },
-                error: function (data) {
-                    showToast('error', '系统错误，请稍后重试', '', 2000);
-                }
-            });
-        }
-    }
-    //选择父级单位
-    function chooseParorg() {
-        fbwindow("选择单位", "<?= \yii\helpers\Url::toRoute('organizations/select-org') ?>", 'l');
-    }
-    function selectCorp(id, name) {
-        $('.modal-open').removeClass('modal-open');
-//        自动生成的，根据表单提交
-        $('#corpName').val(name);
-        $('#orgId').val(id);
-    }
-    function resetPwd(id) {
-        fbwindow('重置密码', '<?= Url::toRoute(['operators/reset-pwd']) ?>&id=' + id, '');
-    }
+    <script src="static/js/jquery-latest.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/theme.js"></script>
 </script>
-<?php $this->endBlock(); ?>
-
+<?php $this->endBlock()?>
