@@ -2569,3 +2569,1454 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1532944692.225
     'REQUEST_TIME' => 1532944692
 ]
+2018-07-31 03:01:23 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "". in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2018-07-31 03:01:23 [127.0.0.1][-][-][info][application] $_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '1875'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/easymall/'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1532998883.02
+    'REQUEST_TIME' => 1532998883
+]
+2018-07-31 03:05:15 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "menu/index". in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('menu/index', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2018-07-31 03:05:15 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'menu/index'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '1kqob13htld2ob5ec4vk8isl4e'
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1kqob13htld2ob5ec4vk8isl4e; _csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '2029'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=menu/index'
+    'REQUEST_URI' => '/easymall/index.php?r=menu/index'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1532999115.41
+    'REQUEST_TIME' => 1532999115
+]
+2018-07-31 03:05:45 [127.0.0.1][-][-][error][yii\base\InvalidParamException] yii\base\InvalidParamException: The view file does not exist: D:\git\EasyMall\easymall\views\menu\index.php in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\MenuController))
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\controllers\MenuController))
+#2 D:\git\EasyMall\easymall\controllers\MenuController.php(17): yii\base\Controller->render('index', Array)
+#3 [internal function]: app\controllers\MenuController->actionIndex()
+#4 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#7 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('menu/index', Array)
+#8 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2018-07-31 03:05:45 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'menu/index'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '1kqob13htld2ob5ec4vk8isl4e'
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1kqob13htld2ob5ec4vk8isl4e; _csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '2050'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=menu/index'
+    'REQUEST_URI' => '/easymall/index.php?r=menu/index'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1532999145.4
+    'REQUEST_TIME' => 1532999145
+]
+2018-07-31 03:07:40 [127.0.0.1][-][-][error][Error] Error: Call to undefined method app\components\Utils::checkAccess() in D:\git\EasyMall\easymall\views\menu\index.php:10
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(325): require()
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#2 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\MenuController))
+#3 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\controllers\MenuController))
+#4 D:\git\EasyMall\easymall\controllers\MenuController.php(17): yii\base\Controller->render('index', Array)
+#5 [internal function]: app\controllers\MenuController->actionIndex()
+#6 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#8 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#9 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('menu/index', Array)
+#10 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#12 {main}
+2018-07-31 03:07:40 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'menu/index'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '1kqob13htld2ob5ec4vk8isl4e'
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1kqob13htld2ob5ec4vk8isl4e; _csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '2095'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=menu/index'
+    'REQUEST_URI' => '/easymall/index.php?r=menu/index'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1532999260.035
+    'REQUEST_TIME' => 1532999260
+]
+2018-07-31 03:08:55 [127.0.0.1][-][1kqob13htld2ob5ec4vk8isl4e][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property of non-object in D:\git\EasyMall\easymall\views\layouts\_header.php:17
+Stack trace:
+#0 D:\git\EasyMall\easymall\views\layouts\_header.php(17): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'D:\\git\\EasyMall...', 17, Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(325): require('D:\\git\\EasyMall...')
+#2 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#3 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, NULL)
+#4 D:\git\EasyMall\easymall\views\layouts\main.php(20): yii\base\View->render('_header')
+#5 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(325): require('D:\\git\\EasyMall...')
+#6 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#7 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(393): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\MenuController))
+#8 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(379): yii\base\Controller->renderContent('<div class="mai...')
+#9 D:\git\EasyMall\easymall\controllers\MenuController.php(17): yii\base\Controller->render('index', Array)
+#10 [internal function]: app\controllers\MenuController->actionIndex()
+#11 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#12 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#13 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#14 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('menu/index', Array)
+#15 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#17 {main}
+2018-07-31 03:08:54 [127.0.0.1][-][1kqob13htld2ob5ec4vk8isl4e][info][application] $_GET = [
+    'r' => 'menu/index'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '1kqob13htld2ob5ec4vk8isl4e'
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'rageu'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1kqob13htld2ob5ec4vk8isl4e; _csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '2145'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=menu/index'
+    'REQUEST_URI' => '/easymall/index.php?r=menu/index'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1532999334.921
+    'REQUEST_TIME' => 1532999334
+]
+2018-07-31 03:09:03 [127.0.0.1][-][1kqob13htld2ob5ec4vk8isl4e][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property of non-object in D:\git\EasyMall\easymall\views\layouts\_header.php:17
+Stack trace:
+#0 D:\git\EasyMall\easymall\views\layouts\_header.php(17): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'D:\\git\\EasyMall...', 17, Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(325): require('D:\\git\\EasyMall...')
+#2 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#3 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, NULL)
+#4 D:\git\EasyMall\easymall\views\layouts\main.php(20): yii\base\View->render('_header')
+#5 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(325): require('D:\\git\\EasyMall...')
+#6 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#7 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(393): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\MenuController))
+#8 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(379): yii\base\Controller->renderContent('<div class="mai...')
+#9 D:\git\EasyMall\easymall\controllers\MenuController.php(17): yii\base\Controller->render('index', Array)
+#10 [internal function]: app\controllers\MenuController->actionIndex()
+#11 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#12 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#13 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#14 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('', Array)
+#15 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#17 {main}
+2018-07-31 03:09:03 [127.0.0.1][-][1kqob13htld2ob5ec4vk8isl4e][info][application] $_COOKIE = [
+    'PHPSESSID' => '1kqob13htld2ob5ec4vk8isl4e'
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'rageu'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1kqob13htld2ob5ec4vk8isl4e; _csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '2152'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/easymall/index.php'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1532999343.291
+    'REQUEST_TIME' => 1532999343
+]
+2018-07-31 03:11:01 [127.0.0.1][1][jtenj6gd0eif9jpa9e4el5nuiq][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "operators/index". in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('operators/index', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2018-07-31 03:11:01 [127.0.0.1][1][jtenj6gd0eif9jpa9e4el5nuiq][info][application] $_GET = [
+    'r' => 'operators/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'jtenj6gd0eif9jpa9e4el5nuiq'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'pegud'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=jtenj6gd0eif9jpa9e4el5nuiq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '2266'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=operators%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=operators%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1532999461.663
+    'REQUEST_TIME' => 1532999461
+]
+2018-07-31 03:11:16 [127.0.0.1][1][c5t4sld7udadfnqv136d4b9ej4][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "operators/index". in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('operators/index', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2018-07-31 03:11:16 [127.0.0.1][1][c5t4sld7udadfnqv136d4b9ej4][info][application] $_GET = [
+    'r' => 'operators/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'c5t4sld7udadfnqv136d4b9ej4'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'wugln'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=c5t4sld7udadfnqv136d4b9ej4'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '2278'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=operators%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=operators%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1532999476.216
+    'REQUEST_TIME' => 1532999476
+]
+2018-07-31 03:16:27 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "operators/index". in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('operators/index', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2018-07-31 03:16:27 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][info][application] $_GET = [
+    'r' => 'operators/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'vf7upgi5p84gptm2o60jajkonq'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'xavoz'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=vf7upgi5p84gptm2o60jajkonq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '2562'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=operators%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=operators%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1532999787.954
+    'REQUEST_TIME' => 1532999787
+]
+2018-07-31 03:17:25 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][error][Error] Error: Class 'app\models\AuthAssignment' not found in D:\git\EasyMall\easymall\models\Operators.php:127
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Component.php(130): app\models\Operators->getAuth()
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\db\BaseActiveRecord.php(252): yii\base\Component->__get('auth')
+#2 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Model.php(984): yii\db\BaseActiveRecord->__get('auth')
+#3 D:\git\EasyMall\easymall\views\operators\_list.php(30): yii\base\Model->offsetGet('auth')
+#4 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(325): require('D:\\git\\EasyMall...')
+#5 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#6 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\OperatorsController))
+#7 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('_list', Array, Object(app\controllers\OperatorsController))
+#8 D:\git\EasyMall\easymall\controllers\OperatorsController.php(31): yii\base\Controller->renderPartial('_list', Array)
+#9 D:\git\EasyMall\easymall\views\operators\index.php(23): app\controllers\OperatorsController->actionData()
+#10 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(325): require('D:\\git\\EasyMall...')
+#11 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#12 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\OperatorsController))
+#13 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\controllers\OperatorsController))
+#14 D:\git\EasyMall\easymall\controllers\OperatorsController.php(15): yii\base\Controller->render('index')
+#15 [internal function]: app\controllers\OperatorsController->actionIndex()
+#16 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#17 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#18 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#19 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('operators/index', Array)
+#20 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#22 {main}
+2018-07-31 03:17:24 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][info][application] $_GET = [
+    'r' => 'operators/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'vf7upgi5p84gptm2o60jajkonq'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'xavoz'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=vf7upgi5p84gptm2o60jajkonq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '2608'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=operators%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=operators%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1532999844.878
+    'REQUEST_TIME' => 1532999844
+]
+2018-07-31 03:17:54 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][error][Error] Error: Class 'app\components\AjaxPager' not found in D:\git\EasyMall\easymall\views\operators\_list.php:55
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(325): require()
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#2 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\OperatorsController))
+#3 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('_list', Array, Object(app\controllers\OperatorsController))
+#4 D:\git\EasyMall\easymall\controllers\OperatorsController.php(31): yii\base\Controller->renderPartial('_list', Array)
+#5 D:\git\EasyMall\easymall\views\operators\index.php(23): app\controllers\OperatorsController->actionData()
+#6 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(325): require('D:\\git\\EasyMall...')
+#7 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#8 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\OperatorsController))
+#9 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\controllers\OperatorsController))
+#10 D:\git\EasyMall\easymall\controllers\OperatorsController.php(15): yii\base\Controller->render('index')
+#11 [internal function]: app\controllers\OperatorsController->actionIndex()
+#12 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#13 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#14 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#15 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('operators/index', Array)
+#16 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#18 {main}
+2018-07-31 03:17:54 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][info][application] $_GET = [
+    'r' => 'operators/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'vf7upgi5p84gptm2o60jajkonq'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'xavoz'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=vf7upgi5p84gptm2o60jajkonq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '2628'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=operators%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=operators%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1532999874.086
+    'REQUEST_TIME' => 1532999874
+]
+2018-07-31 03:18:08 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][error][Error] Error: Class 'app\components\BreadcrumbsNew' not found in D:\git\EasyMall\easymall\views\layouts\main.php:35
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(325): require()
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#2 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(393): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\OperatorsController))
+#3 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(379): yii\base\Controller->renderContent('<div class="mai...')
+#4 D:\git\EasyMall\easymall\controllers\OperatorsController.php(15): yii\base\Controller->render('index')
+#5 [internal function]: app\controllers\OperatorsController->actionIndex()
+#6 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#8 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#9 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('operators/index', Array)
+#10 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#12 {main}
+2018-07-31 03:18:08 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][info][application] $_GET = [
+    'r' => 'operators/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'vf7upgi5p84gptm2o60jajkonq'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'xavoz'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=vf7upgi5p84gptm2o60jajkonq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '2637'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=operators%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=operators%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1532999888.546
+    'REQUEST_TIME' => 1532999888
+]
+2018-07-31 03:30:35 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][error][ParseError] ParseError: syntax error, unexpected end of file, expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\git\EasyMall\easymall\views\layouts\_left.php:52
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, NULL)
+#2 D:\git\EasyMall\easymall\views\layouts\main.php(23): yii\base\View->render('_left')
+#3 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(325): require('D:\\git\\EasyMall...')
+#4 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#5 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(393): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\MenuController))
+#6 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(379): yii\base\Controller->renderContent('<div class="mai...')
+#7 D:\git\EasyMall\easymall\controllers\MenuController.php(17): yii\base\Controller->render('index', Array)
+#8 [internal function]: app\controllers\MenuController->actionIndex()
+#9 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#10 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#11 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#12 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('', Array)
+#13 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#15 {main}
+2018-07-31 03:30:35 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][info][application] $_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'vf7upgi5p84gptm2o60jajkonq'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'xavoz'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=operators%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=vf7upgi5p84gptm2o60jajkonq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '2967'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/easymall/index.php'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1533000635.854
+    'REQUEST_TIME' => 1533000635
+]
+2018-07-31 03:33:24 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "role/index". in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('role/index', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2018-07-31 03:33:24 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][info][application] $_GET = [
+    'r' => 'role/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'vf7upgi5p84gptm2o60jajkonq'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'xavoz'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=vf7upgi5p84gptm2o60jajkonq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '3079'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=role%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=role%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1533000804.049
+    'REQUEST_TIME' => 1533000804
+]
+2018-07-31 04:30:26 [127.0.0.1][-][-][error][ParseError] ParseError: syntax error, unexpected end of file in D:\git\EasyMall\easymall\views\menu\index.php:259
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\MenuController))
+#2 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\controllers\MenuController))
+#3 D:\git\EasyMall\easymall\controllers\MenuController.php(17): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\MenuController->actionIndex()
+#5 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#7 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#8 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('menu/index', Array)
+#9 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2018-07-31 04:30:26 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'menu/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'vf7upgi5p84gptm2o60jajkonq'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=home/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=vf7upgi5p84gptm2o60jajkonq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '6303'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=menu%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=menu%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1533004226.468
+    'REQUEST_TIME' => 1533004226
+]
+2018-07-31 04:30:59 [127.0.0.1][-][-][error][ParseError] ParseError: syntax error, unexpected end of file in D:\git\EasyMall\easymall\views\menu\index.php:261
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\MenuController))
+#2 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\controllers\MenuController))
+#3 D:\git\EasyMall\easymall\controllers\MenuController.php(17): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\MenuController->actionIndex()
+#5 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#7 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#8 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('menu/index', Array)
+#9 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2018-07-31 04:30:59 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'menu/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'vf7upgi5p84gptm2o60jajkonq'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=home/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=vf7upgi5p84gptm2o60jajkonq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '6361'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=menu%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=menu%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1533004259.331
+    'REQUEST_TIME' => 1533004259
+]
+2018-07-31 04:32:10 [127.0.0.1][-][-][error][ParseError] ParseError: syntax error, unexpected 'endif' (T_ENDIF), expecting end of file in D:\git\EasyMall\easymall\views\menu\index.php:98
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\MenuController))
+#2 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\controllers\MenuController))
+#3 D:\git\EasyMall\easymall\controllers\MenuController.php(17): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\MenuController->actionIndex()
+#5 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#7 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#8 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('menu/index', Array)
+#9 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2018-07-31 04:32:10 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'menu/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'vf7upgi5p84gptm2o60jajkonq'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=home/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=vf7upgi5p84gptm2o60jajkonq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '6493'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=menu%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=menu%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1533004330.76
+    'REQUEST_TIME' => 1533004330
+]
+2018-07-31 04:39:14 [127.0.0.1][-][-][error][ParseError] ParseError: syntax error, unexpected end of file, expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\git\EasyMall\easymall\views\menu\index.php:282
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\git\\EasyMall...', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\git\\EasyMall...', Array, Object(app\controllers\MenuController))
+#2 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\controllers\MenuController))
+#3 D:\git\EasyMall\easymall\controllers\MenuController.php(17): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\MenuController->actionIndex()
+#5 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#7 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#8 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('menu/index', Array)
+#9 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2018-07-31 04:39:14 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'menu/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'vf7upgi5p84gptm2o60jajkonq'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=home/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=vf7upgi5p84gptm2o60jajkonq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '7270'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=menu%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=menu%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1533004754.087
+    'REQUEST_TIME' => 1533004754
+]
+2018-07-31 05:20:33 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "role/index". in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('role/index', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2018-07-31 05:20:33 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][info][application] $_GET = [
+    'r' => 'role/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'vf7upgi5p84gptm2o60jajkonq'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'xavoz'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=operators%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=vf7upgi5p84gptm2o60jajkonq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '11473'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=role%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=role%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1533007233.588
+    'REQUEST_TIME' => 1533007233
+]
+2018-07-31 05:45:07 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "role/index". in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('role/index', Array)
+#1 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\git\EasyMall\yii2-advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\git\EasyMall\easymall\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2018-07-31 05:45:07 [127.0.0.1][1][vf7upgi5p84gptm2o60jajkonq][info][application] $_GET = [
+    'r' => 'role/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO\";}'
+    'PHPSESSID' => 'vf7upgi5p84gptm2o60jajkonq'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'xavoz'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://127.0.0.1/easymall/index.php?r=home%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_csrf=6f4fdd1c7d2804bae524a93f59807839f7b2a060f0788b44c99cf2c7c5a76a6fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XLWHaDiZcbKEiZIJ15TOBtv70LCeIhFO%22%3B%7D; PHPSESSID=vf7upgi5p84gptm2o60jajkonq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_131\\bin;C:\\Program Files\\Java\\jdk1.8.0_131\\jre\\bin;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\lib;C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/company/sandtable/sourcecodes/sand/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/easymall'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:\\git\\EasyMall\\easymall\\web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/git/EasyMall/easymall/web/index.php'
+    'REMOTE_PORT' => '14304'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=role%2Findex'
+    'REQUEST_URI' => '/easymall/index.php?r=role%2Findex'
+    'SCRIPT_NAME' => '/easymall/index.php'
+    'PHP_SELF' => '/easymall/index.php'
+    'REQUEST_TIME_FLOAT' => 1533008707.214
+    'REQUEST_TIME' => 1533008707
+]
