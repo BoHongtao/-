@@ -24,14 +24,13 @@ class OperatorsController extends BaseController
         $query = Operators::find()->joinWith('operatorinfos')->filterWhere(['operator_name'=>$operator_name]);
         $pager = $this->Pager($query,'operators/data');
         $OperatorsInfos = $query->offset($pager->offset)->limit($pager->limit)->asArray()->all();
-        var_dump($OperatorsInfos);exit();
         //角色id与角色名字映射关系
-        $rules = Yii::$app->authManager->getRoles();
-        $rules = array_column($rules, "description", "name");
+        $role = Yii::$app->authManager->getRoles();
+        $role = array_column($role, "description", "type");
         return $this->renderPartial('_list',[
             'OperatorsInfos'=>$OperatorsInfos,
             'pager'=>$pager,
-            '$rules'=>$rules
+            'role'=>$role
         ]);
     }
 
