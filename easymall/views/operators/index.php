@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div id="pad-wrapper" class="users-list">
             <div class="row-fluid header">
-                <h3>Users</h3>
+                <h3>管理员设置</h3>
                 <div class="span10 pull-right">
                     <input type="text" class="span5 search" placeholder="Type a user's name..."/>
                     <div class="ui-dropdown">

@@ -20,7 +20,7 @@ use app\components\AjaxPager;
             <th class="span2 sortable">
                 <span class="line"></span>联系电话
             </th>
-            <th class="span3 sortable align-right">
+            <th class="span2 sortable">
                 <span class="line"></span>操作
             </th>
         </tr>
@@ -30,20 +30,20 @@ use app\components\AjaxPager;
         <!-- row -->
         <tr class="first">
             <?php foreach ($OperatorsInfos as $key => $operator): ?>
-                <td><?= $key + 1 + $pager->offset ?></td>
+                <td width="10%"><?= $key + 1 + $pager->offset ?></td>
                 <td>
-                    <img src="<?= $operator->head_pic ?>" class="img-circle avatar hidden-phone" />
-                    <a href="user-profile.html" class="name"><?= $operator->operator_name ?></a>
-                    <span class="subtext"><?= $operator->company ?></span>
+                    <img src="<?= $operator['operatorinfos']['head_pic']=='' ? 'static/img/contact-img.png' : $operator['operatorinfos']['head_pic'] ?>" class="img-circle avatar hidden-phone" />
+                    <a href="user-profile.html" class="name"><?= $operator['operator_name'] ?></a>
+                    <span class="subtext"><?= $operator['operatorinfos']['company'] ?></span>
                 </td>
                 <td>
-                    <?= isset($roles[$operator['auth']['item_name']])?$roles[$operator['auth']['item_name']]:""; ?>
+                    <?=  isset($role[$operator['id']])?$role[$operator['id']]:""; ?>
                 </td>
                 <td>
-                    <?= $operator->truename ?>
+                    <?= $operator['operatorinfos']['truename'] ?>
                 </td>
-                <td class="align-right">
-                    <a href="#"><?= $operator->contact_phone ?></a>
+                <td>
+                    <a href="#"><?= $operator['operatorinfos']['contact_phone'] ?></a>
                 </td>
                 <td>
                     <span>重置密码</span>
