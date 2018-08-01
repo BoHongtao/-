@@ -30,7 +30,7 @@ class AppAsset extends AssetBundle
 
     ];
     public $js = [
-        'static/js/jquery-latest.js',
+//        'static/js/jquery-latest.js',
         'static/js/bootstrap.min.js',
         'static/js/jquery-ui-1.10.2.custom.min.js',
         'static/js/jquery.knob.js',
