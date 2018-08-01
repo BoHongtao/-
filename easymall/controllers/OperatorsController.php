@@ -33,37 +33,49 @@ class OperatorsController extends BaseController
             'role'=>$role
         ]);
     }
-
     public function actionAdd()
     {
         $model = new Operators();
-        $model->scenario = 'add';
-        if (Yii::$app->request->isPost && $model->load(Yii::$app->request->post())) {
+        if(Yii::$app->request->isPost && $model->load(Yii::$app->request->post())){
             $this->returnJson();
-            if (!$model->validate()) return ['code' => 9999, 'desc' => $this->getMsg($model)];
-            $data = Yii::$app->request->post();
-            $model->operator_type = 1;
-            $model->password = Yii::$app->getSecurity()->generatePasswordHash($data['Operators']['password']);
-            $tr = Yii::$app->db->beginTransaction();
-            try {
-                if (!$model->save(false)) throw new \Exception("管理员保存失败！");
-                $auth = Yii::$app->authManager;
-                $role = $auth->getRole($data['Operators']['role_id']);
-                if (!$auth->assign($role, $model->id)) throw new \Exception("管理员角色配置失败！");
-                $tr->commit();
-                return ['code' => 0, 'desc' => '添加成功'];
-            } catch (\Exception $e) {
-                $tr->rollBack();
-                return ['code' => 9999, 'desc' => $e->getMessage()];
-            }
         }
         $roles = $model->getRoles();
         foreach ($roles as $k=>$v) $data[$v['name']] = $v['name'];
-        return $this->render('add', [
-            'model' => $model,
+        return $this->render('add',[
+            'model'=>$model,
             'roles' =>$data
         ]);
     }
+//    public function actionAdd()
+//    {
+//        $model = new Operators();
+//        $model->scenario = 'add';
+//        if (Yii::$app->request->isPost && $model->load(Yii::$app->request->post())) {
+//            $this->returnJson();
+//            if (!$model->validate()) return ['code' => 9999, 'desc' => $this->getMsg($model)];
+//            $data = Yii::$app->request->post();
+//            $model->operator_type = 1;
+//            $model->password = Yii::$app->getSecurity()->generatePasswordHash($data['Operators']['password']);
+//            $tr = Yii::$app->db->beginTransaction();
+//            try {
+//                if (!$model->save(false)) throw new \Exception("管理员保存失败！");
+//                $auth = Yii::$app->authManager;
+//                $role = $auth->getRole($data['Operators']['role_id']);
+//                if (!$auth->assign($role, $model->id)) throw new \Exception("管理员角色配置失败！");
+//                $tr->commit();
+//                return ['code' => 0, 'desc' => '添加成功'];
+//            } catch (\Exception $e) {
+//                $tr->rollBack();
+//                return ['code' => 9999, 'desc' => $e->getMessage()];
+//            }
+//        }
+//        $roles = $model->getRoles();
+//        foreach ($roles as $k=>$v) $data[$v['name']] = $v['name'];
+//        return $this->render('add', [
+//            'model' => $model,
+//            'roles' =>$data
+//        ]);
+//    }
 
     public function actionModifyPwd()
     {
