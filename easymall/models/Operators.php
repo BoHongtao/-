@@ -9,6 +9,11 @@ class Operators extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfa
     public $new_pwd;
     public $re_pwd;
     public $roles;
+    public $true_name;
+    public $email;
+    public $contact_phone;
+    public $wechat;
+    public $head_pic;
 
     public static function tableName() {
         return 'operators';
@@ -41,7 +46,12 @@ class Operators extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfa
             'record_time' => '记录时间',
             'last_login_ip' => '最后登录ip',
             'last_login_time' => '最后登录时间',
-            'role_id' => '角色'
+            'role_id' => '角色',
+            'true_name'=>'真实姓名',
+            'email'=>'邮箱',
+            'contact_phone'=>'联系电话',
+            'wechat'=>'微信号',
+            'head_pic'=>'头像'
         ];
     }
 
