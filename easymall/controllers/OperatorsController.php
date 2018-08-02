@@ -3,10 +3,12 @@
 namespace app\controllers;
 
 use app\models\AuthAssignment;
+use app\models\OperatorsInfo;
 use Yii;
 use app\models\Operators;
 use app\models\Pwd;
 use yii\db\Exception;
+use yii\web\UploadedFile;
 
 class OperatorsController extends BaseController
 {
@@ -33,49 +35,89 @@ class OperatorsController extends BaseController
             'role'=>$role
         ]);
     }
+
+    /*
+     * 添加一个管理员
+     */
     public function actionAdd()
     {
-        $model = new Operators();
-        if(Yii::$app->request->isPost && $model->load(Yii::$app->request->post())){
+        $operator = new Operators();
+        $operator_info = new OperatorsInfo();
+        if(Yii::$app->request->isAjax && $operator->load(Yii::$app->request->post())){
             $this->returnJson();
+            //开始事务
+            $tr = Yii::$app->db->beginTransaction();
+            try{
+                //登陆密码哈希处理
+                $operator->password =  Yii::$app->getSecurity()->generatePasswordHash($operator->password);
+                $operator->file = UploadedFile::getInstance($operator,'file');
+                $operator->operator_type = 1;
+                $operator->file and $operator_info->head_pic = $operator->upload();
+                if(!$operator->save(false))
+                    throw new Exception($this->getMsg($operator));
+                //管理员详细信息入库
+                $new_operator_id = $operator->id;
+                $operator_info->operator_id = $new_operator_id;
+                $operator_info->company = $operator->company;
+                $operator_info->truename = $operator->true_name;
+                $operator_info->wechat = $operator->wechat;
+                $operator_info->email = $operator->email;
+                $operator_info->contact_phone = $operator->contact_phone;
+                if (!$operator_info->save())
+                    throw new \Exception($this->getMsg($operator_info));
+                $tr->commit();
+                return ['code'=>200];
+            }catch (\Exception $exception){
+                $tr->rollBack();
+                $msg = $exception->getMessage();
+                return ['code'=>0,'msg'=>$msg];
+            }
         }
-        $roles = $model->getRoles();
-        foreach ($roles as $k=>$v) $data[$v['name']] = $v['name'];
+        $roles = $operator->getRoles();
+        foreach ($roles as $k=>$v)
+            $data[$v['type']] = $v['name'];
         return $this->render('add',[
-            'model'=>$model,
+            'model'=>$operator,
             'roles' =>$data
         ]);
     }
-//    public function actionAdd()
-//    {
-//        $model = new Operators();
-//        $model->scenario = 'add';
-//        if (Yii::$app->request->isPost && $model->load(Yii::$app->request->post())) {
-//            $this->returnJson();
-//            if (!$model->validate()) return ['code' => 9999, 'desc' => $this->getMsg($model)];
-//            $data = Yii::$app->request->post();
-//            $model->operator_type = 1;
-//            $model->password = Yii::$app->getSecurity()->generatePasswordHash($data['Operators']['password']);
-//            $tr = Yii::$app->db->beginTransaction();
-//            try {
-//                if (!$model->save(false)) throw new \Exception("管理员保存失败！");
-//                $auth = Yii::$app->authManager;
-//                $role = $auth->getRole($data['Operators']['role_id']);
-//                if (!$auth->assign($role, $model->id)) throw new \Exception("管理员角色配置失败！");
-//                $tr->commit();
-//                return ['code' => 0, 'desc' => '添加成功'];
-//            } catch (\Exception $e) {
-//                $tr->rollBack();
-//                return ['code' => 9999, 'desc' => $e->getMessage()];
-//            }
-//        }
-//        $roles = $model->getRoles();
-//        foreach ($roles as $k=>$v) $data[$v['name']] = $v['name'];
-//        return $this->render('add', [
-//            'model' => $model,
-//            'roles' =>$data
-//        ]);
-//    }
+    /*
+     * 删除管理员
+     * @param id post方式接收被删除管理员id
+     */
+    public function actionDel(){
+        if(Yii::$app->request->isAjax){
+            $this->returnJson();
+            $id = Yii::$app->request->post('id');
+            if($id==1) return ['code'=>0,'desc'=>'系统管理员无法删除'];
+            //开始事务
+            $tr = Yii::$app->db->beginTransaction();
+            try{
+                //删除主表operators
+                if(Operators::deleteAll(['id'=>$id])!==1)
+                    throw new Exception("删除主表信息失败");
+                if(OperatorsInfo::deleteAll(['operator_id'=>$id])!==1)
+                    throw new Exception("删除副表信息失败");
+                $tr->commit();
+                return ['code'=>200];
+            }catch (\Exception $e){
+                $tr->rollBack();
+                $msg = $e->getMessage();
+                return ['code'=>0,'msg'=>$msg];
+            }
+        }
+    }
+    /*
+     * 验证(新增和更新管理员)
+     */
+    public function actionValidate($id = '')
+    {
+        $id and $model = Operators::findOne($id) or $model = new Operators();
+        if ($model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            return \yii\bootstrap\ActiveForm::validate($model);
+        }
+    }
 
     public function actionModifyPwd()
     {
@@ -154,24 +196,24 @@ class OperatorsController extends BaseController
             'model' => $model
         ]);
     }
-    public function actionDel()
-    {
-        if(Yii::$app->request->isAjax){
-            $this->returnJson();
-            $id = Yii::$app->request->post('id','');
-            if($id==1) return ['code'=>0,'desc'=>'系统管理员无法删除'];
-            $tr = Yii::$app->db->beginTransaction();
-            try{
-                if(Operators::deleteAll(['id'=>$id])!==1) throw new Exception('删除管理员失败');
-                if(AuthAssignment::deleteAll(['user_id'=>$id])!==1) throw new Exception('删除管理员失败');
-                $tr->commit();
-                return ['code'=>200];
-            }catch (\Exception $e){
-                $tr->rollBack();
-                return ['code'=>0,'desc'=>$e->getMessage()];
-            }
-        }
-    }
+//    public function actionDel()
+//    {
+//        if(Yii::$app->request->isAjax){
+//            $this->returnJson();
+//            $id = Yii::$app->request->post('id','');
+//            if($id==1) return ['code'=>0,'desc'=>'系统管理员无法删除'];
+//            $tr = Yii::$app->db->beginTransaction();
+//            try{
+//                if(Operators::deleteAll(['id'=>$id])!==1) throw new Exception('删除管理员失败');
+//                if(AuthAssignment::deleteAll(['user_id'=>$id])!==1) throw new Exception('删除管理员失败');
+//                $tr->commit();
+//                return ['code'=>200];
+//            }catch (\Exception $e){
+//                $tr->rollBack();
+//                return ['code'=>0,'desc'=>$e->getMessage()];
+//            }
+//        }
+//    }
 
     /**
      * 选择父级单位
@@ -199,19 +241,6 @@ class OperatorsController extends BaseController
         }
     }
 
-    public function actionValidateAdd($id = '')
-    {
-        if ($id) {
-            $model = Operators::findOne($id);
-        } else {
-            $model = new Operators();
-        }
-
-        if ($model->load(Yii::$app->request->post())) {
-            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-            return \yii\bootstrap\ActiveForm::validate($model);
-        }
-    }
 
     public function actionValidateResetPwd()
     {
