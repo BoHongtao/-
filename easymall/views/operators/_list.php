@@ -1,6 +1,10 @@
 <?php
 use app\components\AjaxPager;
 ?>
+<link rel="stylesheet" href="static/css/compiled/user-list.css" type="text/css" media="screen" />
+<link href="static/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+<link href="static/layer/css/layui.css" type="text/css" rel="stylesheet" />
+
 <div class="row-fluid table">
     <table class="table table-hover">
         <thead>
@@ -28,16 +32,17 @@ use app\components\AjaxPager;
 
         <tbody>
         <!-- row -->
-        <tr class="first">
-            <?php foreach ($OperatorsInfos as $key => $operator): ?>
+        <?php foreach ($OperatorsInfos as $key => $operator): ?>
+
+            <tr class="first">
                 <td width="10%"><?= $key + 1 + $pager->offset ?></td>
                 <td>
-                    <img src="<?= $operator['operatorinfos']['head_pic']=='' ? 'static/img/contact-img.png' : $operator['operatorinfos']['head_pic'] ?>" class="img-circle avatar hidden-phone" />
+                    <img src="<?= $operator['operatorinfos']['head_pic']=='' ? 'static/img/contact-img.png' : picPath($operator['operatorinfos']['head_pic']) ?>" class="img-circle avatar hidden-phone" />
                     <a href="user-profile.html" class="name"><?= $operator['operator_name'] ?></a>
                     <span class="subtext"><?= $operator['operatorinfos']['company'] ?></span>
                 </td>
                 <td>
-                    <?=  isset($role[$operator['id']])?$role[$operator['id']]:""; ?>
+                    <?=  isset($role[$operator['id']]) ? $role[$operator['id']]:""; ?>
                 </td>
                 <td>
                     <?= $operator['operatorinfos']['truename'] ?>
@@ -47,11 +52,11 @@ use app\components\AjaxPager;
                 </td>
                 <td>
                     <span>重置密码</span>
-                    <span>删除</span>
+                    <span class="layui-btn layui-btn-danger layui-btn-sm" data-type="del" id="<?=$operator['id']?>">删除</span>
                     <span>编辑</span>
                 </td>
-            <?php endforeach; ?>
         </tr>
+        <?php endforeach; ?>
         <!-- row -->
         </tbody>
     </table>

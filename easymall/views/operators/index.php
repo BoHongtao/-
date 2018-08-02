@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="static/css/compiled/user-list.css" type="text/css" media="screen" />
-<link href="static/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
-<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
+<?php
+use yii\helpers\Url;
+?>
 <div class="content">
     <div class="container-fluid">
         <div id="pad-wrapper" class="users-list">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
 
-                    <a href="new-user.html" class="btn-flat success pull-right">
+                    <a href="<?= Url::toRoute(['operators/add'])?>" class="btn-flat success pull-right">
                         <span>&#43;</span>
                         新建管理员
                     </a>
@@ -68,9 +68,43 @@
 </div>
 <!-- end main container -->
 <?php $this->beginBlock('script') ?>
-<script type="text/javascript">
-    <script src="static/js/jquery-latest.js"></script>
-    <script src="static/js/bootstrap.min.js"></script>
-    <script src="static/js/theme.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/theme.js"></script>
+<script src="static/layer/layui.js"></script>
+<script>
+    layui.use('layer', function(){
+        var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+        //触发事件
+        var active = {
+            //删除动作
+            del: function(id){
+                layer.confirm('您确定要删除此管理员？', {
+                    btn: ['是','否'] //按钮
+                }, function(){
+                    $.ajax({
+                        url: '<?= Url::toRoute('operators/del')?>',
+                        type: 'post',
+                        data: {id: id},
+                        success: function (data) {
+                            if (data.code == 200){
+                                layer.msg('已删除')
+                            }else{
+                                layer.msg('删除失败')
+                            }
+                        }
+                    })
+                    layer.msg('已删除', {icon: 1});
+                }, function(){
+                    layer.msg('已取消', {icon: 1});
+                });
+            }
+        };
+        //layer点击删除按钮事件
+        $('.layui-btn-sm').on('click', function(){
+            var type = $(this).data('type');
+            var id = $(this).attr('id')
+            active[type] ? active[type].call(this,id) : '';
+        });
+    });
 </script>
 <?php $this->endBlock()?>

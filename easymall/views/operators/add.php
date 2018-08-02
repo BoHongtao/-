@@ -24,6 +24,8 @@ use yii\bootstrap\ActiveForm;
                             'fieldConfig' => [
                                 'template' => "<div class='span12 field-box'>{label}{input}{error}</div> <div>{hint}</div>",
                             ],
+                            'enableAjaxValidation' => true,
+                            'validationUrl' => Url::toRoute('operators/validate')
                         ]); ?>
                         <?= $form->field($model,'operator_name')->textInput(['class' => 'span9']) ?>
                         <?= $form->field($model,'password')->textInput(['class' => 'span9']) ?>
@@ -32,62 +34,14 @@ use yii\bootstrap\ActiveForm;
                         <?= $form->field($model,'email')->textInput(['class' => 'span9']) ?>
                         <?= $form->field($model,'contact_phone')->textInput(['class' => 'span9']) ?>
                         <?= $form->field($model,'wechat')->textInput(['class' => 'span9']) ?>
-                        <?= $form->field($model,'head_pic')->fileInput(['class' => 'span9']) ?>
-
-                        <!--                        <div class="span12 field-box">-->
-<!--                            <label>Name:</label>-->
-<!--                            <input class="span9" type="text" />-->
-<!--                        </div>-->
-<!--                        <div class="span12 field-box">-->
-<!--                            <label>State:</label>-->
-<!--                            <div class="ui-select span5">-->
-<!--                                <select>-->
-<!--                                    <option value="AK" />Alaska-->
-<!--                                    <option value="HI" />Hawaii-->
-<!--                                    <option value="CA" />California-->
-<!--                                    <option value="NV" />Nevada-->
-<!--                                    <option value="OR" />Oregon-->
-<!--                                    <option value="WA" />Washington-->
-<!--                                    <option value="AZ" />Arizona-->
-<!--                                </select>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="span12 field-box">-->
-<!--                            <label>Company:</label>-->
-<!--                            <input class="span9" type="text" />-->
-<!--                        </div>-->
-<!--                        <div class="span12 field-box">-->
-<!--                            <label>Email:</label>-->
-<!--                            <input class="span9" type="text" />-->
-<!--                        </div>-->
-<!--                        <div class="span12 field-box">-->
-<!--                            <label>Phone:</label>-->
-<!--                            <input class="span9" type="text" />-->
-<!--                        </div>-->
-<!--                        <div class="span12 field-box">-->
-<!--                            <label>Website:</label>-->
-<!--                            <input class="span9" type="text" />-->
-<!--                        </div>-->
-<!--                        <div class="span12 field-box">-->
-<!--                            <label>Address:</label>-->
-<!--                            <div class="address-fields">-->
-<!--                                <input class="span12" type="text" placeholder="Street address" />-->
-<!--                                <input class="span12 small" type="text" placeholder="City" />-->
-<!--                                <input class="span12 small" type="text" placeholder="State" />-->
-<!--                                <input class="span12 small last" type="text" placeholder="Postal Code" />-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="span12 field-box textarea">-->
-<!--                            <label>Notes:</label>-->
-<!--                            <textarea class="span9"></textarea>-->
-<!--                            <span class="charactersleft">90 characters remaining. Field limited to 100 characters</span>-->
-<!--                        </div>-->
-<!--                        <div class="span11 field-box actions">-->
-<!--                            <input type="button" class="btn-glow primary" value="Create user" />-->
-<!--                            <span>OR</span>-->
-<!--                            <input type="reset" value="Cancel" class="reset" />-->
-<!--                        </div>-->
-                        <?php ActiveForm::end() ?>
+                        <?= $form->field($model,'company')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($model,'file')->fileInput(['class' => 'span9']) ?>
+                        <div class="span11 field-box actions">
+                            <?= Html::submitButton('Create user', ['class' => 'btn-glow primary','name'=>'submit-button','id' => 'manager-add-btn']) ?>
+                            <span>OR</span>
+                            <?= Html::button('取消', ['class' => 'reset', 'style' => 'margin-left:5px', 'id' => 'manager-cancle-btn', 'onclick' => 'history.go(-1)']) ?>
+                        </div>
+                        <?php ActiveForm::end(); ?>
                     </div>
                 </div>
                 <!-- side right column -->
@@ -112,40 +66,78 @@ use yii\bootstrap\ActiveForm;
 </div>
 
 <?php $this->beginBlock('script'); ?>
-    <script src="static/js/clipboard.min.js"></script>
-    <script>
-        /*
-         *  随机产生密码
-         *  @param   size   int  生成密码的长度
-         */
-        function randomPassword(size) {
-            var seed = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','P','Q','R','S','T','U','V','W','X','Y','Z', 'a','b','c','d','e','f','g','h','i','j','k','m','n','p','Q','r','s','t','u','v','w','x','y','z', '2','3','4','5','6','7','8','9','$','!','@','#','*');
-            seedlenth = seed.length;
-            var createPassword = '';
-            for (i = 0 ; i < size; ++ i){
-                j = Math.floor(Math.random()*seedlenth);
-                createPassword += seed[j];
+<script src="static/js/clipboard.min.js"></script>
+<script src="static/layer/layui.js"></script>
+<script>
+    /*
+     *  随机产生密码
+     *  @param   size   int  生成密码的长度
+     */
+    function randomPassword(size) {
+        var seed = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','P','Q','R','S','T','U','V','W','X','Y','Z', 'a','b','c','d','e','f','g','h','i','j','k','m','n','p','Q','r','s','t','u','v','w','x','y','z', '2','3','4','5','6','7','8','9','$','!','@','#','*');
+        seedlenth = seed.length;
+        var createPassword = '';
+        for (i = 0 ; i < size; ++ i){
+            j = Math.floor(Math.random()*seedlenth);
+            createPassword += seed[j];
+        }
+        return createPassword;
+    }
+    /*
+     *  改变div里面的密码
+     */
+    function generate_again() {
+        $('#random_password').text(randomPassword(8))
+    }
+    /*
+     *  打开页面初始化密码
+     */
+    $(function () {
+        generate_again()
+    });
+    /*
+     *  一键复制密码
+     */
+    var clipboard = new ClipboardJS('.btn');
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    /*
+     * 初始化layer
+     */
+    layui.use('layer', function(){
+        var layer = layui.layer;
+    });
+
+    /*
+     * ajax提交
+     */
+    $(document).on("beforeSubmit", "#add_manager_form", function () {
+        $('#manager-add-btn').html('提交中');
+        $('#manager-add-btn').attr('disabled', true);
+        $('#manager-cancle-btn').attr('disabled', true);
+
+        $('#add_manager_form').ajaxSubmit({
+            url: $('#add_manager_form').attr('action'),
+            type: 'post',
+            data: $('#add_manager_form').serialize(),
+            success: function (data) {
+                if (data.code == 200) {
+                    layer.msg('添加成功');
+                    setTimeout('window.location.href="<?= Url::toRoute(['operators/index']) ?>"', 1500);
+                } else {
+                    layer.msg('添加失败');
+                    $('#manager-add-btn').html('确定');
+                    $('#manager-add-btn').attr('disabled', false);
+                    $('#manager-cancle-btn').attr('disabled', false);
+                }
             }
-            return createPassword;
-        }
-        /*
-         *  改变div里面的密码
-         */
-        function generate_again() {
-            $('#random_password').text(randomPassword(8))
-        }
-        $(function () {
-            generate_again()
-        })
-        /*
-         *  一键复制密码
-         */
-        var clipboard = new ClipboardJS('.btn');
-        clipboard.on('success', function(e) {
-            console.log(e);
         });
-        clipboard.on('error', function(e) {
-            console.log(e);
-        });
-    </script>
+        return false;
+    });
+
+</script>
 <?php $this->endBlock(); ?>
