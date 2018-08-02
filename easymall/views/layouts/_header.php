@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Url;
+?>
 <!-- navbar -->
 <div class="navbar navbar-inverse">
     <div class="navbar-inner">
@@ -64,7 +67,7 @@
                         <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
                         <div class="messages">
                             <a href="#" class="item">
-                                <img src="img/contact-img.png" class="display" />
+                                <img src="static/img/contact-img.png" class="display" />
                                 <div class="name">Alejandra Galván</div>
                                 <div class="msg">
                                     There are many variations of available, but the majority have suffered alterations.
@@ -72,7 +75,7 @@
                                 <span class="time"><i class="icon-time"></i> 13 min.</span>
                             </a>
                             <a href="#" class="item">
-                                <img src="img/contact-img2.png" class="display" />
+                                <img src="static/img/contact-img2.png" class="display" />
                                 <div class="name">Alejandra Galván</div>
                                 <div class="msg">
                                     There are many variations of available, have suffered alterations.
@@ -80,7 +83,7 @@
                                 <span class="time"><i class="icon-time"></i> 26 min.</span>
                             </a>
                             <a href="#" class="item last">
-                                <img src="img/contact-img.png" class="display" />
+                                <img src="static/img/contact-img.png" class="display" />
                                 <div class="name">Alejandra Galván</div>
                                 <div class="msg">
                                     There are many variations of available, but the majority have suffered alterations.
@@ -111,7 +114,7 @@
                 </a>
             </li>
             <li class="settings hidden-phone">
-                <a href="signin.html" role="button">
+                <a href="<?= Url::toRoute(['site/logout']) ?>" role="button">
                     <i class="icon-share-alt"></i>
                 </a>
             </li>

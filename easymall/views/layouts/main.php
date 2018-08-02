@@ -23,21 +23,6 @@ AppAsset::register($this);
             <?php echo $this->render('_left') ?>
             <section id="main-content">
                 <section class="wrapper">
-                    <div class="main-content">
-                        <?php if (isset($this->params['breadcrumbs'])):?>
-                            <div class="breadcrumbs" id="breadcrumbs">
-                                <script type="text/javascript">
-                                    try {
-                                        ace.settings.check('breadcrumbs', 'fixed')
-                                    } catch (e) {
-                                    }
-                                </script>
-                                <?= \app\components\BreadcrumbsNew::widget([
-                                    'links' => $this->params['breadcrumbs']
-                                ]) ?>
-                            </div>
-                        <?php endif;?>
-                    </div>
                     <?php echo $content; ?>
                 </section>
             </section>
