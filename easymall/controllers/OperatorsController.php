@@ -119,21 +119,17 @@ class OperatorsController extends BaseController
         }
     }
 
-    public function actionModifyPwd()
+    public function actionChangepwd()
     {
-        $this->layout = 'main_large_frame';
-        $model = new Pwd();
-        $username = Yii::$app->user->identity->operator_name;
-        if (Yii::$app->request->post()) {
+        if(Yii::$app->request->isAjax){
             $this->returnJson();
-            if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->updatePwd($model->newpwd)) {
-                return ['code' => 0, 'msg' => '密码修改成功'];
-            }
-            return ['code' => 9999, 'msg' => $model->errors];
+            $id = Yii::$app->request->post('id');
+            $new_pwd = Yii::$app->request->post('pwd');
+            $new_pwd_hash = Yii::$app->getSecurity()->generatePasswordHash($new_pwd);
+            if(Operators::updateAll(['password'=>$new_pwd_hash],['id'=>$id]))
+                return ['code'=>200];
+            return ['code'=>0];
         }
-        return $this->render('modify-pwd', [
-            'model' => $model
-        ]);
     }
 
     public function actionResetPwd()
