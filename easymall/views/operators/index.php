@@ -62,7 +62,6 @@ use yii\helpers\Url;
                 });
             },
             changepwd: function(id){
-
                 layer.open({
                     title:'重置密码',
                     type: 1,

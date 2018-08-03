@@ -67,7 +67,6 @@ use yii\bootstrap\ActiveForm;
 
 <?php $this->beginBlock('script'); ?>
 <script src="static/js/clipboard.min.js"></script>
-<script src="static/layer/layui.js"></script>
 <script>
     /*
      *  随机产生密码
