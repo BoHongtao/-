@@ -23,7 +23,7 @@ class OperatorsController extends BaseController
     public function actionData($operator_name = '')
     {
         //获取管理员及关联管理员的信息
-        $query = Operators::find()->joinWith('operatorinfos')->filterWhere(['operator_name'=>$operator_name]);
+        $query = Operators::find()->joinWith('operatorinfos')->filterWhere(['like', 'operator_name', $operator_name]);
         $pager = $this->Pager($query,'operators/data');
         $OperatorsInfos = $query->offset($pager->offset)->limit($pager->limit)->asArray()->all();
         //角色id与角色名字映射关系
@@ -108,6 +108,47 @@ class OperatorsController extends BaseController
         }
     }
     /*
+     * 更新管理员信息
+     */
+    public function actionUpdate($operator_id='')
+    {
+        $operator = Operators::findOne(['id'=>$operator_id]);
+        $operator_info = OperatorsInfo::findOne(['operator_id'=>$operator_id]);
+        if(Yii::$app->request->isPost){
+            $this->returnJson();
+            $data = Yii::$app->request->post();
+            $operator->operator_name = $data['Operators']['operator_name'];
+            $operator_info->truename = $data['OperatorsInfo']['truename'];
+            $operator_info->email = $data['OperatorsInfo']['email'];
+            $operator_info->contact_phone = $data['OperatorsInfo']['contact_phone'];
+            $operator_info->wechat = $data['OperatorsInfo']['wechat'];
+            $operator_info->company = $data['OperatorsInfo']['company'];
+            $operator_info->file = UploadedFile::getInstance($operator_info,'file');
+            $operator_info->file and $operator_info->head_pic = $operator_info->upload();
+
+            $tr = Yii::$app->db->beginTransaction();
+            try{
+                if(!$operator->save())
+                    throw new Exception("更新主表失败");
+                if(!$operator_info->save())
+                    throw new Exception("更新副表失败");
+                $tr->commit();
+                return ['code'=>200];
+            }catch (\Exception $e){
+                $tr->rollBack();
+                $msg = $e->getMessage();
+                return ['code'=>0,'msg'=>$msg];
+            }
+        }
+        return $this->render('update',[
+            'operator'=>$operator,
+            'operator_info'=>$operator_info,
+            'id'=>$operator_id,
+        ]);
+    }
+
+
+    /*
      * 验证(新增和更新管理员)
      */
     public function actionValidate($id = '')
@@ -118,7 +159,9 @@ class OperatorsController extends BaseController
             return \yii\bootstrap\ActiveForm::validate($model);
         }
     }
-
+    /*
+     * 重置管理员密码
+     */
     public function actionChangepwd()
     {
         if(Yii::$app->request->isAjax){
@@ -132,66 +175,34 @@ class OperatorsController extends BaseController
         }
     }
 
-    public function actionResetPwd()
-    {
-        $id = Yii::$app->request->get('id');
-        $this->layout = 'main_large_frame';
-        $model = Operators::findOne(['id' => $id]);
-        $pwd = new \app\models\ResetPwd();
-        if (Yii::$app->request->isAjax && $pwd->load(Yii::$app->request->post())) {
-            $this->returnJson();
-            if ($pwd->validate()) {
-                $rs = Yii::$app->db->createCommand("update operators set password=:password where id=:id", [
-                    ':password' => Yii::$app->security->generatePasswordHash($pwd->re_pwd),
-                    ':id' => $id
-                ])->execute();
-                if ($rs) {
-                    return [
-                        'code' => 0,
-                        'desc' => '重置密码成功',
-                    ];
-                } else {
-                    return [
-                        'code' => 9999,
-                        'desc' => '重置密码失败',
-                    ];
-                }
-            }
-        }
-        return $this->render('reset-pwd', [
-            'model' => $model,
-            'pwd' => $pwd
-        ]);
-    }
-
-    public function actionUpdate($id = '')
-    {
-        $model = Operators::find()->where(['id' => $id])->one();
-        if ($model->load(Yii::$app->request->post())) {
-            $this->returnJson();
-            if (!$model->validate()) {
-                $errors = $model->errors;
-                return [
-                    'code' => 9999,
-                    'desc' => $errors[array_keys($errors)[0]][0]
-                ];
-            }
-            if ($model->save()) {
-                return [
-                    'code' => 0,
-                    'desc' => '信息修改成功'
-                ];
-            } else {
-                return [
-                    'code' => 9999,
-                    'desc' => $model->errors
-                ];
-            }
-        }
-        return $this->render('update', [
-            'model' => $model
-        ]);
-    }
+//    public function actionUpdate($id = '')
+//    {
+//        $model = Operators::find()->where(['id' => $id])->one();
+//        if ($model->load(Yii::$app->request->post())) {
+//            $this->returnJson();
+//            if (!$model->validate()) {
+//                $errors = $model->errors;
+//                return [
+//                    'code' => 9999,
+//                    'desc' => $errors[array_keys($errors)[0]][0]
+//                ];
+//            }
+//            if ($model->save()) {
+//                return [
+//                    'code' => 0,
+//                    'desc' => '信息修改成功'
+//                ];
+//            } else {
+//                return [
+//                    'code' => 9999,
+//                    'desc' => $model->errors
+//                ];
+//            }
+//        }
+//        return $this->render('update', [
+//            'model' => $model
+//        ]);
+//    }
 //    public function actionDel()
 //    {
 //        if(Yii::$app->request->isAjax){
