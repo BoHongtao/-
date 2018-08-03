@@ -1,114 +1,141 @@
 <?php
-
 use yii\helpers\Html;
-use yii\web\View;
-use app\components\AjaxPager;
 use yii\helpers\Url;
-use yii\helpers\ArrayHelper;
 use yii\bootstrap\ActiveForm;
-
-$this->params['breadcrumbs'][] = ["label"=>"管理员","url"=>Url::toRoute("operators/index")];
-$this->params['breadcrumbs'][] = '修改';
 ?>
-<div class="main-content">
-    <div class="page-content">
-        <div class="page-header">
-            <h1>
-                管理员
-                <small>
-                    <i class="icon-double-angle-right"></i>
-                    修改
-                </small>
-            </h1>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <!-- PAGE CONTENT BEGINS -->
-                <section class="panel">
-                    <div class="panel-body formBox">
-                        <?php
-                        $form = ActiveForm::begin([
-                                    'id' => 'operators-update-form',
-                                    'options' => [
-                                        'class' => 'form-horizontal'
-                                    ],
-                                    'fieldConfig' => [
-                                        'template' => "{label}\n<div class='col-xs-6'>{input}{error}</div><div class='col-xs-3' style='padding-left:0'>{hint}</div>",
-                                        'labelOptions' => [
-                                            'class' => 'col-xs-3 control-label'
-                                        ]
-                                    ],
-                                    'enableAjaxValidation' => true,
-                                    'validationUrl' => yii\helpers\Url::toRoute(['operators/validate-add', 'id' => $model->id])
-                                ])
-                        ?>
-                        <?= $form->field($model, 'operator_name')->textInput(['placeholder' => '用户名','readonly'=>'readonly'])->hint('*', ['class' => 'help-block text-danger']); ?>
-                        <?= $form->field($model, 'contact_name')->textInput(['placeholder' => '联系人']) ?>
-                        <?= $form->field($model, 'contact_phone')->textInput(['placeholder' => '联系电话']) ?>
-                        <div class="clearfix form-actions">
-                            <div class="col-md-offset-3 col-md-9" style="padding-left: 158px;">
-                                <?= Html::submitButton('确定', ['class' => 'btn btn-info', 'name' => 'login-button', 'id' => 'orgsales-update-btn']) ?>
-                                <!--                                <button class="btn btn-info" type="button">
-                                                                    <i class="icon-ok bigger-110"></i>
-                                                                    Submit
-                                                                </button>-->
+<link rel="stylesheet" type="text/css" href="static/css/lib/font-awesome.css" />
+<link rel="stylesheet" href="static/css/compiled/new-user.css" type="text/css" media="screen" />
 
-                                &nbsp; &nbsp; &nbsp;
-                                <?= Html::button('取消', ['class' => 'btn btn-default', 'style' => 'margin-left:5px', 'id' => 'orgsales-cancle-btn', 'onclick' => 'history.go(-1)']) ?>
-                                <!--                                <button class="btn" type="reset">
-                                                                    <i class="icon-undo bigger-110"></i>
-                                                                    Reset
-                                                                </button>-->
-                            </div>
+<div class="content">
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="new-user">
+            <div class="row-fluid header">
+                <h3>添加新的管理员</h3>
+            </div>
+            <div class="row-fluid form-wrapper">
+                <!-- left column -->
+                <div class="span9 with-sidebar">
+                    <div class="container">
+                        <?php $form = ActiveForm::begin([
+                            'id' => 'update_manager_form',
+                            'options' => [
+                                'class' => 'new_user_form inline-input'
+                            ],
+                            'fieldConfig' => [
+                                'template' => "<div class='span12 field-box'>{label}{input}{error}</div> <div>{hint}</div>",
+                            ],
+                            'enableAjaxValidation' => true,
+                            'validationUrl' => Url::toRoute(['operators/validate','id'=>$id])
+                        ]); ?>
+                        <?= $form->field($operator,'operator_name')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($operator_info,'truename')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($operator_info,'email')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($operator_info,'contact_phone')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($operator_info,'wechat')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($operator_info,'company')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($operator_info,'file')->fileInput(['class' => 'span9']) ?>
+                        <div class="span11 field-box actions">
+                            <?= Html::submitButton('更新', ['class' => 'btn-glow primary','name'=>'submit-button','id' => 'manager-add-btn']) ?>
+                            <span>OR</span>
+                            <?= Html::button('取消', ['class' => 'reset', 'style' => 'margin-left:5px', 'id' => 'manager-cancle-btn', 'onclick' => 'history.go(-1)']) ?>
                         </div>
                         <?php ActiveForm::end(); ?>
                     </div>
-                </section>
-                <!-- PAGE CONTENT ENDS -->
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.page-content -->
+                </div>
+                <!-- side right column -->
+                <div class="span3 form-sidebar pull-right">
+                    <div class="alert alert-info hidden-tablet">
+                        <i class="icon-lightbulb pull-left"></i>
+                        添加管理员请务必保证是可信赖的人员，否则可能会导致平台安全性降低
+                    </div>
+                    <h6>添加管理员注意事项:</h6>
+                    <p>尽可能使用复杂密码</p>
+                    <p>密码切勿外泄</p>
+                    <p>建议复制使用密码生成器生成密码:</p>
+                    <p>
+                    <div style="border: 2px dashed black;line-height: 20px;height: 20px;text-align:center;width: 140px;display: inline-block" id="random_password"></div>
+                    <button class="btn" data-clipboard-action="copy" data-clipboard-target="#random_password" style="margin-left: 8px;">复制</button>
+                    </p>
+                    <p onclick="generate_again()">点击重新生成</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- page end-->
-<?php $this->beginBlock('script') ?>
-<script type="text/javascript">
-    //选择父级单位
-    function chooseRole() {
-        fbwindow("父级单位", "<?= \yii\helpers\Url::toRoute('operators/select-role') ?>", 'l');
-    }
 
-    function selectCorp(name) {
-        $('.modal-open').removeClass('modal-open');
-
-//        自动生成的，根据表单提交
-        $('#authassignment-item_name').val(name);
+<?php $this->beginBlock('script'); ?>
+<script src="static/js/clipboard.min.js"></script>
+<script src="static/layer/layui.js"></script>
+<script>
+    /*
+     *  随机产生密码
+     *  @param   size   int  生成密码的长度
+     */
+    function randomPassword(size) {
+        var seed = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','P','Q','R','S','T','U','V','W','X','Y','Z', 'a','b','c','d','e','f','g','h','i','j','k','m','n','p','Q','r','s','t','u','v','w','x','y','z', '2','3','4','5','6','7','8','9','$','!','@','#','*');
+        seedlenth = seed.length;
+        var createPassword = '';
+        for (i = 0 ; i < size; ++ i){
+            j = Math.floor(Math.random()*seedlenth);
+            createPassword += seed[j];
+        }
+        return createPassword;
     }
-    $(document).on("beforeSubmit", "#operators-update-form", function () {
-        $('#operators-update-btn').attr('disabled', true);
-        $('#operators-cancle-btn').attr('disabled', true);
-        $.ajax({
-            url: $('#operators-update-form').attr('action'),
+    /*
+     *  改变div里面的密码
+     */
+    function generate_again() {
+        $('#random_password').text(randomPassword(8))
+    }
+    /*
+     *  打开页面初始化密码
+     */
+    $(function () {
+        generate_again()
+    });
+    /*
+     *  一键复制密码
+     */
+    var clipboard = new ClipboardJS('.btn');
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    /*
+     * 初始化layer
+     */
+    layui.use('layer', function(){
+        var layer = layui.layer;
+    });
+
+    /*
+     * ajax提交
+     */
+    $(document).on("beforeSubmit", "#update_manager_form", function () {
+        $('#manager-add-btn').html('提交中');
+        $('#manager-add-btn').attr('disabled', true);
+        $('#manager-cancle-btn').attr('disabled', true);
+
+        $('#update_manager_form').ajaxSubmit({
+            url: $('#update_manager_form').attr('action'),
             type: 'post',
-            data: $('#operators-update-form').serialize(),
+            data: $('#update_manager_form').serialize(),
             success: function (data) {
-                if (data.code == 0) {
-                    showToast('success', '修改用户成功', '', 2500);
+                if (data.code == 200) {
+                    layer.msg('更新成功');
                     setTimeout('window.location.href="<?= Url::toRoute(['operators/index']) ?>"', 1500);
                 } else {
-                    var desc = data.desc;
-                    showToast('error', '修改用户失败', desc, 2500);
-                    $('#orgsales-update-btn').attr('disabled', false);
-                    $('#orgsales-cancle-btn').attr('disabled', false);
+                    layer.msg('更新失败');
+                    $('#manager-add-btn').html('确定');
+                    $('#manager-add-btn').attr('disabled', false);
+                    $('#manager-cancle-btn').attr('disabled', false);
                 }
-            },
-            error: function (data) {
-                $('#orgsales-update-btn').attr('disabled', false);
-                $('#orgsales-cancle-btn').attr('disabled', false);
-                showToast('error', '系统忙，请稍后重试', '', 2000);
             }
         });
-        return false; // Cancel form submitting.
+        return false;
     });
+
 </script>
-<?php
-$this->endBlock()?>
+<?php $this->endBlock(); ?>
