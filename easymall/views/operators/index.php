@@ -7,53 +7,14 @@ use yii\helpers\Url;
             <div class="row-fluid header">
                 <h3>管理员设置</h3>
                 <div class="span10 pull-right">
-                    <input type="text" class="span5 search" placeholder="Type a user's name..."/>
-                    <div class="ui-dropdown">
-                        <div class="head" data-toggle="tooltip" title="Click me!">
-                            Filter users
-                            <i class="arrow-down"></i>
-                        </div>
-                        <div class="dialog">
-                            <div class="pointer">
-                                <div class="arrow"></div>
-                                <div class="arrow_border"></div>
-                            </div>
-                            <div class="body">
-                                <p class="title">
-                                    Show users where:
-                                </p>
-                                <div class="form">
-                                    <select>
-                                        <option/>
-                                        Name
-                                        <option/>
-                                        Email
-                                        <option/>
-                                        Number of orders
-                                        <option/>
-                                        Signed up
-                                        <option/>
-                                        Last seen
-                                    </select>
-                                    <select>
-                                        <option/>
-                                        is equal to
-                                        <option/>
-                                        is not equal to
-                                        <option/>
-                                        is greater than
-                                        <option/>
-                                        starts with
-                                        <option/>
-                                        contains
-                                    </select>
-                                    <input type="text"/>
-                                    <a class="btn-flat small">Add filter</a>
-                                </div>
+                    <form id="searchform" class="form-inline" role="form">
+                        <input type="text" name="operator_name" class="span5 search" placeholder="管理员名字"/>
+                        <div class="ui-dropdown">
+                            <div class="head" data-toggle="tooltip" title="Click me!" onclick="search()">
+                                点击搜索
                             </div>
                         </div>
-                    </div>
-
+                    </form>
                     <a href="<?= Url::toRoute(['operators/add'])?>" class="btn-flat success pull-right">
                         <span>&#43;</span>
                         新建管理员
@@ -61,7 +22,9 @@ use yii\helpers\Url;
                 </div>
             </div>
             <!-- Users table -->
-            <?php echo $this->context->actionData() ?>
+            <div id="unseen">
+                <?php echo $this->context->actionData(); ?>
+            </div>
             <!-- end users table -->
         </div>
     </div>
@@ -97,14 +60,72 @@ use yii\helpers\Url;
                 }, function(){
                     layer.msg('已取消', {icon: 1});
                 });
+            },
+            changepwd: function(id){
+
+                layer.open({
+                    title:'重置密码',
+                    type: 1,
+                    skin: 'layui-layer-rim',
+                    area: ['400px', '250px'],
+                    content: $('#changepassword'+id)
+                });
             }
         };
-        //layer点击删除按钮事件
-        $('.layui-btn-sm').on('click', function(){
+        //layer触发点击按钮事件
+        $('.label').on('click', function(){
             var type = $(this).data('type');
             var id = $(this).attr('id')
             active[type] ? active[type].call(this,id) : '';
         });
     });
+    /*
+     * 按照登陆名字搜索
+     */
+    function search() {
+        $.ajax({
+            url: "<?= Url::to(['operators/data']) ?>",
+            data: $('#searchform').serialize(),
+            beforeSend: function (xhr) {
+                $('#unseen').append('<div style="text-align:center;"><span class="ui-icon icon-refresh green"></span></div>');
+            },
+            success: function (data) {
+                $('#unseen').html(data);
+            },
+            complete: function (xhr, sc) {
+                $('#loading').remove();
+            }
+        });
+    }
+    /*
+     *  修改密码
+     */
+    function changepwd(id) {
+        layui.use('layer', function(){
+            var layer = layui.layer;
+        });
+        newpwd = $('#newpwd'+id).val();
+        re_newpwd = $('#re_newpwd'+id).val();
+        if (newpwd!=re_newpwd){
+            layer.msg('密码不一致，请重新输入');
+        }else if (newpwd==''){
+            layer.msg('密码不能为空');
+        }else{
+            $.ajax({
+                url : '<?= Url::toRoute(['operators/changepwd']) ?>',
+                type: 'post',
+                data: {id: id,pwd:newpwd},
+                success: function (data) {
+                    if (data.code == 200){
+                        layer.msg('已重置密码');
+                        layer.closeAll('page');
+                    }else{
+                        layer.msg('重置密码失败');
+                        layer.closeAll('page');
+                    }
+                }
+            })
+        }
+    }
 </script>
 <?php $this->endBlock()?>
