@@ -32,6 +32,7 @@ class AppAsset extends AssetBundle
     public $js = [
 //        'static/js/jquery-latest.js',
 //        'static/js/bootstrap.min.js',
+        'static/layer/layui.js',
         'static/js/toast.js',
         'static/js/toastr.js',
         'static/js/jquery-form.js',
