@@ -4,7 +4,7 @@ namespace app\models;
 
 use Yii;
 
-class Operators extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface {
+class Operators extends Base implements \yii\web\IdentityInterface {
 
     public $new_pwd;
     public $re_pwd;
@@ -13,7 +13,7 @@ class Operators extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfa
     public $email;
     public $contact_phone;
     public $wechat;
-    public $head_pic;
+    public $company;
 
     public static function tableName() {
         return 'operators';
@@ -22,10 +22,12 @@ class Operators extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfa
     public function rules() {
         return [
             [['operator_name'], 'unique'],
+            [['true_name','company','wechat','contact_phone'],'safe'],
+            [['email'],'email'],
             [['password', 're_pwd'],'required','on' => ['add','tourism']],
             [['password', 're_pwd'], 'string', 'max' => 16,'min' => 6,'on' => ['add','tourism']],
             [['password', 're_pwd'],'match','pattern' => "/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/",'message' => '密码必须包含字母和数字','on' => ['add','tourism']],
-            [['password','operator_name'],'required','on' => 'tourism'],
+            [['password','operator_name'],'required'],
             [['operator_name'], 'required','on' =>['add','update']],
             [['operator_type'], 'integer'],
             [['record_time', 'last_login_time'], 'safe'],
@@ -51,7 +53,8 @@ class Operators extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfa
             'email'=>'邮箱',
             'contact_phone'=>'联系电话',
             'wechat'=>'微信号',
-            'head_pic'=>'头像'
+            'file'=>'头像',
+            'company'=>'所在公司'
         ];
     }
 

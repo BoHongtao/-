@@ -16,7 +16,7 @@ use Yii;
  * @property string $wechat
  * @property string $head_pic
  */
-class OperatorsInfo extends \yii\db\ActiveRecord
+class OperatorsInfo extends Base
 {
     /**
      * @inheritdoc
@@ -39,6 +39,7 @@ class OperatorsInfo extends \yii\db\ActiveRecord
             [['contact_phone'], 'string', 'max' => 255],
             [['wechat'], 'string', 'max' => 50],
             [['head_pic'], 'string', 'max' => 128],
+            ['file','safe']
         ];
     }
 
