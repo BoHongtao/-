@@ -90,11 +90,11 @@ use yii\helpers\Url;
                     </dd>
                 </dl>
             <?php } ?>
-
         </form>
         <div class="form-group text-center">
-            <button class="btn btn-success" name="dosubmit" type="submit" onclick="update('<?= $name ?>')" id="update-quanxian">确认修改</button>
-            <button type="button" class="btn btn-default" onclick="parent.closeModal()">关闭</button>
+            <input type="hidden" value="<?= $name ?>" id="admin_name">
+            <button class="btn btn-success" name="dosubmit" data-type="update" id="update-quanxian">确认修改</button>
+            <button type="button" class="btn btn-default" data-type="close">关闭</button>
         </div>
     </div>
 </div>
@@ -157,31 +157,64 @@ use yii\helpers\Url;
             } else {
                 parent.parents('.bd').prev().find('input').prop('checked', false);
             }
-        })
+        });
+
+        //layer事件
+        layui.use('layer', function(){
+            var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+            var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+            //触发事件
+            var active = {
+                close: function(){
+                    parent.layer.close(index);
+                },
+                update:function () {
+                    var name = $('#admin_name').val();
+                    $.ajax({
+                        url: "<?= Url::to(['role/quanxian']) ?>&name=" + name,
+                        data: $('#quanxian').serialize(),
+                        type: "POST",
+                        success: function (data) {
+                            if (data.code == 200) {
+                                layer.msg('更改权限成功');
+                            } else {
+                                layer.msg('更改权限失败');
+                            }
+                        }
+                    });
+                }
+            };
+            $('.btn').on('click', function(){
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+        });
+
     });
 
-    function update(name) {
-        $.ajax({
-            url: "<?php echo Url::to(['role/quanxian']) ?>&name=" + name,
-            data: $('#quanxian').serialize(),
-            type: "POST",
-            success: function (data) {
-                if (data.code == 0) {
-                    parent.closeModal();
-                    parent.showToast('success', '修改权限成功', '', 2500);
-                } else {
-                    var desc = data.desc;
-                    parent.showToast('error', '错误提示', data.desc, 2500);
-                    $('#update-quanxian').attr('disabled', false);
-                }
-            },
-            error: function (data) {
-                $('#update-quanxian').attr('disabled', false);
-                showToast('error', '错误提示', '系统忙，请稍后重试', 2000);
-            }
-        });
-        return false;
-    }
+//    function update(name) {
+//        $.ajax({
+//            url: "<?php //echo Url::to(['role/quanxian']) ?>//&name=" + name,
+//            data: $('#quanxian').serialize(),
+//            type: "POST",
+//            success: function (data) {
+//                if (data.code == 0) {
+//                    parent.closeModal();
+//                    parent.showToast('success', '修改权限成功', '', 2500);
+//                } else {
+//                    var desc = data.desc;
+//                    parent.showToast('error', '错误提示', data.desc, 2500);
+//                    $('#update-quanxian').attr('disabled', false);
+//                }
+//            },
+//            error: function (data) {
+//                $('#update-quanxian').attr('disabled', false);
+//                showToast('error', '错误提示', '系统忙，请稍后重试', 2000);
+//            }
+//        });
+//        return false;
+//    }
+
     <?php $this->endBlock() ?>
 </script>
 
