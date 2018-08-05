@@ -93,10 +93,10 @@ class RoleController extends BaseController
                     }
                 }
                 $tr->commit();
-                return ['code'=>0,'desc'=>'添加成功'];
+                return ['code'=>200,'desc'=>'添加成功'];
             }catch (\Exception $e){
                 $tr->rollBack();
-                return ['code'=>9999,'desc'=>$e->getMessage()];
+                return ['code'=>0,'desc'=>$e->getMessage()];
             }
         }
         $this->layout = 'main_large_frame';

@@ -147,7 +147,6 @@ class OperatorsController extends BaseController
         ]);
     }
 
-
     /*
      * 验证(新增和更新管理员)
      */
@@ -175,53 +174,6 @@ class OperatorsController extends BaseController
         }
     }
 
-//    public function actionUpdate($id = '')
-//    {
-//        $model = Operators::find()->where(['id' => $id])->one();
-//        if ($model->load(Yii::$app->request->post())) {
-//            $this->returnJson();
-//            if (!$model->validate()) {
-//                $errors = $model->errors;
-//                return [
-//                    'code' => 9999,
-//                    'desc' => $errors[array_keys($errors)[0]][0]
-//                ];
-//            }
-//            if ($model->save()) {
-//                return [
-//                    'code' => 0,
-//                    'desc' => '信息修改成功'
-//                ];
-//            } else {
-//                return [
-//                    'code' => 9999,
-//                    'desc' => $model->errors
-//                ];
-//            }
-//        }
-//        return $this->render('update', [
-//            'model' => $model
-//        ]);
-//    }
-//    public function actionDel()
-//    {
-//        if(Yii::$app->request->isAjax){
-//            $this->returnJson();
-//            $id = Yii::$app->request->post('id','');
-//            if($id==1) return ['code'=>0,'desc'=>'系统管理员无法删除'];
-//            $tr = Yii::$app->db->beginTransaction();
-//            try{
-//                if(Operators::deleteAll(['id'=>$id])!==1) throw new Exception('删除管理员失败');
-//                if(AuthAssignment::deleteAll(['user_id'=>$id])!==1) throw new Exception('删除管理员失败');
-//                $tr->commit();
-//                return ['code'=>200];
-//            }catch (\Exception $e){
-//                $tr->rollBack();
-//                return ['code'=>0,'desc'=>$e->getMessage()];
-//            }
-//        }
-//    }
-
     /**
      * 选择父级单位
      */
@@ -247,7 +199,6 @@ class OperatorsController extends BaseController
             return \yii\bootstrap\ActiveForm::validate($model);
         }
     }
-
 
     public function actionValidateResetPwd()
     {

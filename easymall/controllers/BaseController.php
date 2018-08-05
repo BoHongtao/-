@@ -8,6 +8,8 @@
 namespace app\controllers;
 use Yii;
 use yii\web\Controller;
+use app\components\Utils;
+
 class BaseController extends Controller{
     public $pageSize;
 
@@ -15,6 +17,21 @@ class BaseController extends Controller{
     {
         parent::init();
         $this->pageSize = Yii::$app->params ['pageSize'];
+    }
+    public function beforeAction($action)
+    {
+        parent::beforeAction($action);
+        if (Yii::$app->user->isGuest) {
+            $this->redirect(['site/login'])->send();
+            die ();
+        } else {
+            $authname = Yii::$app->controller->id . '/' . Yii::$app->controller->action->id;
+            if (!Utils::checkAccess($authname)) {
+                throw new ForbiddenHttpException ("对不起，您现在还没获此操作的权限");
+                exit ();
+            }
+        }
+        return true;
     }
     //response a json format
     public function returnJson()
