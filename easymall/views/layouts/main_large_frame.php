@@ -17,7 +17,6 @@ AppAsset::register($this);
         <!--<title><?= Html::encode($this->title) ?></title>-->
         <title></title>
         <?php $this->head() ?>
-        <link href="static/css/toastr.css" rel="stylesheet" type="text/css"/>
         <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
   <script src="js/respond.min.js"></script>
@@ -30,7 +29,5 @@ AppAsset::register($this);
         <?php $this->endBody() ?>
     </body>
 </html>
-<script src="static/js/toastr.js" type="text/javascript"></script>
-<script src="static/js/wang.js" type="text/javascript"></script>
 <?php if(isset($this->blocks['script'])) echo $this->blocks['script']?>
 <?php $this->endPage() ?>
