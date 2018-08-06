@@ -8,9 +8,6 @@ use yii\helpers\Url;
 <!-- this page specific styles -->
 <link rel="stylesheet" href="static/css/compiled/tables.css" type="text/css" media="screen" />
 
-<!-- open sans font -->
-<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
-
 <!-- main container -->
 <div class="content">
     <div class="container-fluid">
@@ -19,12 +16,12 @@ use yii\helpers\Url;
             <div class="table-wrapper products-table section">
                 <div class="row-fluid head">
                     <div class="span12">
-                        <h4>菜单</h4>
+                        <h3>菜单</h3>
                     </div>
                 </div>
                 <div class="row-fluid filter-block">
                     <div class="pull-right">
-                        <a class="btn-flat success new-product">+ 创建菜单</a>
+                        <a class="btn-flat success new-product" href="<?= Url::toRoute(['menu/create'])?>">+ 创建菜单</a>
                     </div>
                 </div>
                 <div class="row-fluid">
@@ -71,7 +68,7 @@ use yii\helpers\Url;
                                             <li><a href="<?= Url::toRoute(['menu/update', 'id' => $vo['id']]) ?>">编辑</a></li>
                                         <?php endif; ?>
                                         <?php if (\app\components\Utils::checkAccess("menu/delete")): ?>
-                                            <li class="last"><a href="javascript:void(0)" onclick="del(<?=$vo['id']?>)">删除</a></li>
+                                            <li class="last"><span class="label label-warning" id="<?=$vo['id']?>" data-type="del">删除</span></li>
                                         <?php endif; ?>
                                     </ul>
                                 </td>
@@ -92,7 +89,7 @@ use yii\helpers\Url;
                                                         <li><a href="<?= Url::toRoute(['menu/update', 'id' => $v['id']]) ?>">编辑</a></li>
                                                     <?php endif; ?>
                                                     <?php if (\app\components\Utils::checkAccess("menu/delete")): ?>
-                                                        <li class="last"><a href="javascript:void(0)" onclick="del(<?=$v['id']?>)">删除</a></li>
+                                                        <li class="last"><span class="label label-warning" id="<?=$v['id']?>" data-type="del">删除</span></li>
                                                     <?php endif; ?>
                                                 </ul>
                                             </td>
@@ -113,7 +110,7 @@ use yii\helpers\Url;
                                                                 <li><a href="<?= Url::toRoute(['menu/update', 'id' => $v3['id']]) ?>">编辑</a></li>
                                                             <?php endif; ?>
                                                             <?php if (\app\components\Utils::checkAccess("menu/delete")): ?>
-                                                                <li class="last"><a href="javascript:void(0)" onclick="del(<?=$v3['id']?>)">删除</a></li>
+                                                                <li class="last"><span class="label label-warning" id="<?=$v3['id']?>" data-type="del">删除</span></li>
                                                             <?php endif; ?>
                                                         </ul>
                                                     </td>
@@ -134,25 +131,41 @@ use yii\helpers\Url;
 
 <!--</div>-->
 <?php $this->beginBlock('script') ?>
+<script src="static/layer/layui.js"></script>
 <script type="text/javascript">
-    function del(id) {
-        var flag = confirm('您确定删除此权限及子权限吗？');
-        if (flag) {
-            $.ajax({
-                url: "<?= Url::toRoute('menu/delete') ?>",
-                type: 'post',
-                data: {id: id},
-                success: function (data) {
-                    if (data.code == 200) {
-                        showToast('success', '删除成功', '权限及子权限已成功删除！', 2000);
-                        window.location.reload();
-                    } else if (data.code == 0) {
-                        showToast('error', '删除失败', '请稍后重试', 2000);
-                        window.location.reload();
-                    }
-                }
-            });
-        }
-    }
+    layui.use('layer', function() {
+        var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+        //触发事件
+        var active = {
+            //删除动作
+            del: function (id) {
+                layer.confirm('您确定要删除此权限及其子权限？', {
+                    btn: ['是','否'] //按钮
+                },function () {
+                    $.ajax({
+                        url: "<?= Url::toRoute('menu/delete') ?>",
+                        type: 'post',
+                        data: {id: id},
+                        success: function (data) {
+                            if (data.code == 200) {
+                                layer.msg('权限及子权限已成功删除')
+                            } else if (data.code == 0) {
+                                layer.msg('删除失败')
+                            }
+                            window.location.reload();
+                        }
+                    });
+                }, function(){
+                    layer.msg('已取消', {icon: 1});
+                });
+            }
+        };
+        //layer触发点击按钮事件
+        $('.label').on('click', function(){
+            var type = $(this).data('type');
+            var id = $(this).attr('id')
+            active[type] ? active[type].call(this,id) : '';
+        });
+    });
 </script>
 <?php $this->endBlock(); ?>
