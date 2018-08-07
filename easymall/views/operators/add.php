@@ -3,7 +3,6 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 ?>
-<link rel="stylesheet" type="text/css" href="static/css/lib/font-awesome.css" />
 <link rel="stylesheet" href="static/css/compiled/new-user.css" type="text/css" media="screen" />
 
 <div class="content">

@@ -153,3 +153,17 @@ function genUID(){
 function picPath($file){
     return Yii::$app->params["file_upload"].substr($file,0,2)."/".$file;
 }
+
+/*
+ * 删除某个文件
+ * @param  file   路径
+ * return  bool
+ */
+function deleteFile($filepath){
+    if(is_file($filepath)){
+        if(unlink($filepath))
+            return true;
+        return false;
+    }
+    return false;
+}

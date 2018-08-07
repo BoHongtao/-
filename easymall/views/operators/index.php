@@ -54,12 +54,14 @@ use yii\helpers\Url;
                             }else{
                                 layer.msg('删除失败')
                             }
+                            setTimeout(window.location.reload(),2000);
                         }
                     })
                     layer.msg('已删除', {icon: 1});
                 }, function(){
                     layer.msg('已取消', {icon: 1});
                 });
+
             },
             changepwd: function(id){
                 layer.open({

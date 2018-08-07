@@ -149,7 +149,7 @@ class AjaxPager extends Widget
                             url:url,
                             data:$(\'#\'+formId).serialize(),
                             beforeSend:function(xhr){
-                                $(\'#'.$this->container.'\').append(\'<div id="loading"><img src="static/images/loading.gif" /></div>\');
+                                $(\'#'.$this->container.'\').append(\'<div id="loading"><img src="static/img/loading.gif" /></div>\');
                             },
                             success:function(data){
                                 $(\'#'.$this->container.'\').html(data);

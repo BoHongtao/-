@@ -3,14 +3,13 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 ?>
-<link rel="stylesheet" type="text/css" href="static/css/lib/font-awesome.css" />
 <link rel="stylesheet" href="static/css/compiled/new-user.css" type="text/css" media="screen" />
 
 <div class="content">
     <div class="container-fluid">
         <div id="pad-wrapper" class="new-user">
             <div class="row-fluid header">
-                <h3>添加新的管理员</h3>
+                <h3>更新管理员信息</h3>
             </div>
             <div class="row-fluid form-wrapper">
                 <!-- left column -->

@@ -2,7 +2,6 @@
 use app\components\AjaxPager;
 ?>
 <link rel="stylesheet" href="static/css/compiled/user-list.css" type="text/css" media="screen" />
-<link href="static/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
 <!--<link href="static/layer/css/layui.css" type="text/css" rel="stylesheet" />-->
 
 <div class="row-fluid table">

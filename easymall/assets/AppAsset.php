@@ -28,6 +28,8 @@ class AppAsset extends AssetBundle
         'static/css/elements.css',
         'static/css/icons.css',
 
+        'static/css/lib/font-awesome.css',
+
     ];
     public $js = [
 //        'static/js/jquery-latest.js',

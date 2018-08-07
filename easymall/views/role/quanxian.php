@@ -189,32 +189,7 @@ use yii\helpers\Url;
                 active[type] ? active[type].call(this) : '';
             });
         });
-
     });
-
-//    function update(name) {
-//        $.ajax({
-//            url: "<?php //echo Url::to(['role/quanxian']) ?>//&name=" + name,
-//            data: $('#quanxian').serialize(),
-//            type: "POST",
-//            success: function (data) {
-//                if (data.code == 0) {
-//                    parent.closeModal();
-//                    parent.showToast('success', '修改权限成功', '', 2500);
-//                } else {
-//                    var desc = data.desc;
-//                    parent.showToast('error', '错误提示', data.desc, 2500);
-//                    $('#update-quanxian').attr('disabled', false);
-//                }
-//            },
-//            error: function (data) {
-//                $('#update-quanxian').attr('disabled', false);
-//                showToast('error', '错误提示', '系统忙，请稍后重试', 2000);
-//            }
-//        });
-//        return false;
-//    }
-
     <?php $this->endBlock() ?>
 </script>
 

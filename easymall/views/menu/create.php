@@ -50,8 +50,6 @@ use yii\widgets\ActiveForm;
                             <?= Html::button('取消', ['class' => 'reset', 'style' => 'margin-left:5px', 'id' => 'manager-cancle-btn', 'onclick' => 'history.go(-1)']) ?>
                         </div>
 
-
-
                         <?php ActiveForm::end(); ?>
                     </div>
                 </div>

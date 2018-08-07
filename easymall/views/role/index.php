@@ -2,7 +2,6 @@
 use yii\helpers\Url;
 ?>
 <link rel="stylesheet" href="static/css/compiled/user-list.css" type="text/css" media="screen" />
-<link href="static/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
 <!--<link href="static/layer/css/layui.css" type="text/css" rel="stylesheet" />-->
 <div class="content">
     <div class="container-fluid">
@@ -71,7 +70,6 @@ use yii\helpers\Url;
     layui.use('layer', function(){
         var layer = layui.layer;
     });
-
     /*
      * 删除角色
      */

@@ -152,7 +152,7 @@ use yii\helpers\Url;
                             } else if (data.code == 0) {
                                 layer.msg('删除失败')
                             }
-                            window.location.reload();
+                            setTimeout(window.location.reload(),2000);
                         }
                     });
                 }, function(){

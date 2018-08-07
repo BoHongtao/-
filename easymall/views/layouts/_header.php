@@ -10,7 +10,7 @@ use yii\helpers\Url;
             <span class="icon-bar"></span>
         </button>
 
-        <a class="brand" href="index.html" style="font-weight:700;font-family:Microsoft Yahei">EasyMall - 后台管理</a>
+        <a class="brand" href="index.html" style="font-weight:700;font-family:Microsoft Yahei">慕课- 后台管理</a>
 
         <ul class="nav pull-right">
             <li class="hidden-phone">
