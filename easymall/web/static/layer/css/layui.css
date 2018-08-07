@@ -1,12 +1,10 @@
 /**
- 
+
  @Name: layui
  @Author: 贤心
  @Site: www.layui.com
- 
+
  */
-
-
 /** 初始化 **/
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td,form,pre{margin: 0; padding: 0; -webkit-tap-highlight-color:rgba(0,0,0,0);}
 a:active,a:hover{outline:0}
@@ -52,7 +50,7 @@ a cite{font-style: normal; *cursor:pointer;}
   url('../font/iconfont.woff?v=230') format('woff'),
   url('../font/iconfont.ttf?v=230') format('truetype');
 }
-                    
+
 .layui-icon{
   font-family:"layui-icon" !important;
   font-size: 16px;
@@ -512,9 +510,7 @@ hr, .layui-timeline-item:before{background-color: #e6e6e6;}
 .layui-word-aux{color: #999 !important; padding: 0 5px !important;}
 
 /*
- 
-  按钮 
-
+  按钮
 */
 
 .layui-btn{display: inline-block; vertical-align: middle; height: 38px; line-height: 38px; padding: 0 18px; background-color: #009688; color: #fff; white-space: nowrap; text-align: center; font-size: 14px; border: none; border-radius: 2px; cursor: pointer; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
