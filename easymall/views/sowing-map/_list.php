@@ -6,7 +6,6 @@
  * Time: 13:45
  */
 ?>
-
 <!--轮播图展示-->
 <div class="layui-carousel" id="test1" lay-filter="test1">
     <div carousel-item>
@@ -16,7 +15,6 @@
     </div>
 </div>
 <br/>
-
 <!--轮播文件列表-->
 <div class="row-fluid table">
     <table class="table table-hover">

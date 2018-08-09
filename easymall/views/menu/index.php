@@ -37,16 +37,16 @@ use yii\helpers\Url;
                             <th class="span3">
                                 <span class="line"></span>功能路由
                             </th>
-                            <th class="span3">
+                            <th class="span4">
                                 <span class="line"></span>控制器列表
                             </th>
-                            <th class="span3">
+                            <th class="span2">
                                 <span class="line"></span>状态
                             </th>
-                            <th class="span3">
+                            <th class="span2">
                                 <span class="line"></span>权重
                             </th>
-                            <th class="span3">
+                            <th class="span2">
                                 <span class="line"></span>操作
                             </th>
 

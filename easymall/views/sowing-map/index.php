@@ -28,16 +28,6 @@ use yii\helpers\Url;
     </div>
 </div>
 
-<div id="replace_pic" style="display: none;padding: 20px;">
-    <div class="layui-upload">
-        <button type="button" class="layui-btn" id="test1">上传图片</button>
-        <div class="layui-upload-list">
-            <img class="layui-upload-img" src="" id="demo1">
-            <p id="demoText"></p>
-        </div>
-    </div>
-</div>
-
 <?php $this->beginBlock('script'); ?>
 <script>
     layui.use('carousel', function(){
