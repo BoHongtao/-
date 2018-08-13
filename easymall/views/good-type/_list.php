@@ -26,9 +26,9 @@
         <tbody>
             <?php foreach ($typeInfo as $key=>$v): ?>
             <tr class="first">
-                <td width="10%"><?= $key + 1 + $pager->offset ?></td>
+                <td width="10%"><?= $key + 1 ?></td>
                 <td><?= $v['type'] ?></td>
-                <td><?= $v['filename'] ?></td>
+                <td><?php echo isset($v['typePic']['filename']) ? $v['typePic']['filename'] : '暂无图片' ?></td>
             </tr>
             <?php endforeach; ?>
         </tbody>

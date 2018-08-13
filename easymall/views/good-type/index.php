@@ -18,7 +18,7 @@ use yii\helpers\Url;
                 <div class="span10 pull-right">
                     <a href="<?= Url::toRoute(['good-type/add']) ?>" class="btn-flat success pull-right">
                         <span>&#43;</span>
-                        新建管理员
+                        新建类别
                     </a>
                 </div>
             </div>

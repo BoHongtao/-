@@ -2,8 +2,6 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
  * This is the model class for table "pictures".
  *
@@ -11,7 +9,7 @@ use Yii;
  * @property string $filename
  * @property integer $resource_id
  */
-class Pictures extends \yii\db\ActiveRecord
+class Pictures extends Base
 {
     /**
      * @inheritdoc
@@ -27,8 +25,7 @@ class Pictures extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['filename', 'resource_id'], 'required'],
-            [['resource_id'], 'integer'],
+            [['filename','id'], 'required'],
             [['filename'], 'string', 'max' => 60],
         ];
     }
@@ -40,8 +37,7 @@ class Pictures extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'filename' => 'Filename',
-            'resource_id' => 'Resource ID',
+            'filename' => 'Filename'
         ];
     }
 }

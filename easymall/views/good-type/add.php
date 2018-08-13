@@ -8,9 +8,10 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
+
 ?>
-<link rel="stylesheet" type="text/css" href="static/css/lib/font-awesome.css" />
-<link rel="stylesheet" href="static/css/compiled/new-user.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="static/css/lib/font-awesome.css"/>
+<link rel="stylesheet" href="static/css/compiled/new-user.css" type="text/css" media="screen"/>
 <div class="content">
     <div class="container-fluid">
         <div id="pad-wrapper" class="new-user">
@@ -34,13 +35,13 @@ use yii\bootstrap\ActiveForm;
                         ]); ?>
                     </div>
                 </div>
-                <?= $form->field($type, 'type')->textInput(['placeholder' => '类型名称','class' => 'span9']); ?>
-                <?= $form->field($type, 'order')->dropDownList(['0' => '0','1' => '1','2' => '2','3' => '3','4' => '4'],['class'=>'span9']) ?>
+                <?= $form->field($type, 'type')->textInput(['placeholder' => '类型名称', 'class' => 'span9']); ?>
+                <?= $form->field($type, 'order')->dropDownList(['0' => '0', '1' => '1', '2' => '2', '3' => '3', '4' => '4'], ['class' => 'span9']) ?>
 
                 <?= $form->field($type, 'file')->fileInput(); ?>
 
                 <div class="span11 field-box actions">
-                    <?= Html::submitButton('创建', ['class' => 'btn-glow primary','name'=>'submit-button','id' => 'manager-add-btn']) ?>
+                    <?= Html::submitButton('创建', ['class' => 'btn-glow primary', 'name' => 'submit-button', 'id' => 'manager-add-btn']) ?>
                     <span>OR</span>
                     <?= Html::button('取消', ['class' => 'reset', 'style' => 'margin-left:5px', 'id' => 'manager-cancle-btn', 'onclick' => 'history.go(-1)']) ?>
                 </div>
@@ -49,3 +50,35 @@ use yii\bootstrap\ActiveForm;
         </div>
     </div>
 </div>
+
+
+<?php $this->beginBlock('script'); ?>
+<script>
+    /*
+     * ajax提交
+     */
+    $(document).on("beforeSubmit", "#add-type", function () {
+        $('#manager-add-btn').html('提交中');
+        $('#manager-add-btn').attr('disabled', true);
+        $('#manager-cancle-btn').attr('disabled', true);
+
+        $('#add-type').ajaxSubmit({
+            url: $('#add-type').attr('action'),
+            type: 'post',
+            data: $('#add-type').serialize(),
+            success: function (data) {
+                if (data.code == 200) {
+                    layer.msg('添加成功');
+                    setTimeout('window.location.href="<?= Url::toRoute(['good-type/index']) ?>"', 1500);
+                } else {
+                    layer.msg('添加失败');
+                    $('#manager-add-btn').html('确定');
+                    $('#manager-add-btn').attr('disabled', false);
+                    $('#manager-cancle-btn').attr('disabled', false);
+                }
+            }
+        });
+        return false;
+    });
+</script>
+<?php $this->endBlock(); ?>

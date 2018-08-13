@@ -55,4 +55,17 @@ class BaseController extends Controller{
             'route' => $route
         ]);
     }
+    /*
+     * 是否post请求
+     */
+    public function isPost(){
+        if(Yii::$app->request->isPost)
+            return true;
+        return false;
+    }
+    public function isAjax(){
+        if(Yii::$app->request->isAjax)
+            return true;
+        return false;
+    }
 }

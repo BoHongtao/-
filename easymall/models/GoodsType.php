@@ -49,6 +49,6 @@ class GoodsType extends Base
     }
     public function getTypePic()
     {
-        return $this->hasOne(Pictures::className(),['resource_id'=>'id']);
+        return $this->hasOne(Pictures::className(),['id'=>'pic_id']);
     }
 }

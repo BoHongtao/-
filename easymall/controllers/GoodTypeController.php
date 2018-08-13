@@ -6,8 +6,12 @@
  * Time: 16:22
  */
 namespace app\controllers;
+use app\models\Pictures;
 use Yii;
 use app\models\GoodsType;
+use yii\db\Exception;
+use yii\web\UploadedFile;
+
 
 class GoodTypeController extends BaseController
 {
@@ -37,6 +41,27 @@ class GoodTypeController extends BaseController
     {
         $type = new GoodsType();
         if($this->isPost()){
+            $this->returnJson();
+            $pic = new Pictures();
+            $data = Yii::$app->request->post();
+            $tr = Yii::$app->db->beginTransaction();
+            try{
+                if(!$type->load($data))
+                    throw new \Exception($this->getMsg($type));
+                $type->file = UploadedFile::getInstance($type,'file');
+                $type->file and $pic->filename = $type->upload();
+                //保存图片
+                if(!$pic->save(false))
+                    throw new Exception($this->getMsg($pic));
+                $type->pic_id = $pic->id;
+                if(!$type->save(false))
+                    throw new Exception($this->getMsg($type));
+                $tr->commit();
+                return ['code'=>200];
+            }catch (\Exception $exception){
+                $tr->rollBack();
+                return ['code'=>0,'msg'=>$exception->getMessage()];
+            }
 
         }
         return $this->render('add', [
@@ -47,7 +72,7 @@ class GoodTypeController extends BaseController
     /*
      * 表单验证
      */
-    public function actionValidateAdd()
+    public function actionValidate()
     {
         $type = new GoodsType();
         if ($type->load(Yii::$app->request->post())) {
