@@ -209,4 +209,22 @@ class OperatorsController extends BaseController
         }
     }
 
+
+//    /*
+//     * 测试接口
+//     */
+//    public function actionTest(){
+//        $this->layout = false;
+//        $this->returnJson();
+//        if(Yii::$app->request->isPost){
+//            $id = Yii::$app->request->post('id');
+//            $data = Operators::find()->filterWhere(['id'=>$id])->asArray()->all();
+//            return ['code'=>200,'data'=>$data];
+////            return true;
+//        }
+//        return ['code'=>0,'data'=>''];
+////        return false;
+//    }
+
+
 }
