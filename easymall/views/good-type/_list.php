@@ -20,6 +20,9 @@
                 <th class="span2 sortable">
                     <span class="line"></span>前台主图
                 </th>
+                <th class="span2 sortable">
+                    <span class="line"></span>logo
+                </th>
             </tr>
         </thead>
 
@@ -28,7 +31,8 @@
             <tr class="first">
                 <td width="10%"><?= $key + 1 ?></td>
                 <td><?= $v['type'] ?></td>
-                <td><?php echo isset($v['typePic']['filename']) ? $v['typePic']['filename'] : '暂无图片' ?></td>
+                <td><?php echo isset($v['pic']['filename']) ? $v['pic']['filename'] : '暂无图片' ?></td>
+                <td><?php echo isset($v['logo']['filename']) ? $v['logo']['filename'] : '暂无logo' ?></td>
             </tr>
             <?php endforeach; ?>
         </tbody>

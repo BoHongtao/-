@@ -8,7 +8,6 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
-
 ?>
 <link rel="stylesheet" type="text/css" href="static/css/lib/font-awesome.css"/>
 <link rel="stylesheet" href="static/css/compiled/new-user.css" type="text/css" media="screen"/>
@@ -39,6 +38,7 @@ use yii\bootstrap\ActiveForm;
                 <?= $form->field($type, 'order')->dropDownList(['0' => '0', '1' => '1', '2' => '2', '3' => '3', '4' => '4'], ['class' => 'span9']) ?>
 
                 <?= $form->field($type, 'file')->fileInput(); ?>
+                <?= $form->field($type, 'logo')->fileInput(); ?>
 
                 <div class="span11 field-box actions">
                     <?= Html::submitButton('创建', ['class' => 'btn-glow primary', 'name' => 'submit-button', 'id' => 'manager-add-btn']) ?>
