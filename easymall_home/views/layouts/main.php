@@ -27,6 +27,7 @@ AppAsset::register($this);
             </section>
         </div>
     </div>
+    <?php echo $this->render('_footer') ?>
     <?php $this->endBody() ?>
     <?php if(isset($this->blocks['script'])) echo $this->blocks['script']?>
     </body>
