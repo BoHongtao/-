@@ -30,7 +30,6 @@ class GoodTypeController extends BaseController
     {
         $typeInfo = GoodsType::find()->filterWhere(['type' => $typename])->asArray()->all();
         $typeInfo = GoodsType::getPic($typeInfo);
-//        var_dump($typeInfo);die;
         return $this->renderPartial('_list', [
             'typeInfo' => $typeInfo
         ]);
@@ -45,7 +44,6 @@ class GoodTypeController extends BaseController
         if($this->isPost()){
             $this->returnJson();
             $pic1 = new Pictures();
-            $pic2 = new Pictures();
             $data = Yii::$app->request->post();
             $tr = Yii::$app->db->beginTransaction();
             try{
@@ -58,14 +56,6 @@ class GoodTypeController extends BaseController
                 if(!$pic1->save(false))
                     throw new Exception($this->getMsg($pic1));
                 $type->pic_id = $pic1->id;
-
-                //保存小logo
-                $type->file = UploadedFile::getInstance($type,'logo');
-                $type->file and $pic2->filename = $type->upload();
-                if(!$pic2->save(false)){
-                    throw new Exception($this->getMsg($pic2));
-                }
-                $type->logo_id = $pic2->id;
                 if(!$type->save(false))
                     throw new Exception($this->getMsg($type));
                 $tr->commit();
