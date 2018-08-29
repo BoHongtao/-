@@ -38,7 +38,8 @@ use yii\bootstrap\ActiveForm;
                 <?= $form->field($type, 'order')->dropDownList(['0' => '0', '1' => '1', '2' => '2', '3' => '3', '4' => '4'], ['class' => 'span9']) ?>
 
                 <?= $form->field($type, 'file')->fileInput(); ?>
-                <?= $form->field($type, 'logo')->fileInput(); ?>
+
+                <?= $form->field($type, 'logo')->dropDownList(['0' => '速冻食品', '1' => '新鲜蔬菜', '2' => '禽类蛋品', '3' => '猪牛羊肉', '4' => '海鲜水产' ,'5' => '新鲜水果'], ['class' => 'span9']) ?>
 
                 <div class="span11 field-box actions">
                     <?= Html::submitButton('创建', ['class' => 'btn-glow primary', 'name' => 'submit-button', 'id' => 'manager-add-btn']) ?>
@@ -54,6 +55,12 @@ use yii\bootstrap\ActiveForm;
 
 <?php $this->beginBlock('script'); ?>
 <script>
+    /*
+     * 初始化layer
+     */
+    layui.use('layer', function(){
+        var layer = layui.layer;
+    });
     /*
      * ajax提交
      */
