@@ -6,8 +6,8 @@
  * Time: 10:17
  */
 namespace app\controllers;
+use app\models\LoginForm;
 use app\models\User;
-use common\models\LoginForm;
 use Yii;
 class UserController extends BaseController
 {
@@ -17,6 +17,7 @@ class UserController extends BaseController
     public function actionRegister(){
         $this->layout = 'main_login';
         $user = new User();
+        $user->scenario = "register";
         if(Yii::$app->request->isPost && $user->load(Yii::$app->request->post())){
             $user->userpwd = Yii::$app->getSecurity()->generatePasswordHash($user->userpwd);
             if ($user->save(false)){
@@ -38,8 +39,9 @@ class UserController extends BaseController
             return $this->redirect(['home/index']);
         }
         $model = new LoginForm();
-        if( $model->load(Yii::$app->request->post()) && $model->login()){
-
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            $users = Yii::$app->user->identity;
+            return $this->redirect(['home/index']);
         }
         return $this->render('login',[
             'model'=>$model

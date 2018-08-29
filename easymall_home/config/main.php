@@ -13,7 +13,7 @@ return [
     'controllerNamespace' => 'app\controllers',
     'components' => [
         'user' => [
-            'identityClass' => 'app\models\Operators',
+            'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
         //本地

@@ -1,47 +1,35 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: john
- * Date: 2018/7/30
- * Time: 16:29
- */
 
 namespace app\models;
+
 use Yii;
 use yii\base\Model;
 
-class LoginVerity extends Model
+class LoginForm extends Model
 {
-    public $userName;
-    public $password;
-    public $code;
+    public $username;
+    public $userpwd;
     private $_sysUser = false;
-
 
     public function rules()
     {
         return [
-            [['userName', 'password'], 'required'],
-            ['password', 'validatePassword'],
-            ['code', 'captcha']
+            [['username', 'userpwd'], 'required'],
+            ['userpwd', 'validatePassword'],
         ];
     }
-
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
-            'userName' => '',
-            'password' => '',
-            'code' => ''
+            'username' => '用户名',
+            'userpwd' => '密码',
         ];
     }
-
     public function validatePassword($attribute)
     {
         if (!$this->hasErrors()) {
             $user = $this->getSysUser();
-            if (!$user || (!$user->validatePassword($this->password, $user->password))) {
-                $this->addError($attribute, '用户名/密码错误');
+            if (!$user || (!$user->validatePassword($this->userpwd,$user->userpwd))) {
+                $this->addError($attribute, '密码错误');
             }
         }
     }
@@ -55,13 +43,12 @@ class LoginVerity extends Model
     public function getSysUser()
     {
         if ($this->_sysUser === false) {
-            $this->_sysUser = Operators::login($this->userName);
+            $this->_sysUser = User::login($this->username);
         }
         return $this->_sysUser;
     }
 
-    public function getAuthKey()
-    {
+    public function getAuthKey(){
         return \Yii::$app->security->generateRandomString();
     }
 }

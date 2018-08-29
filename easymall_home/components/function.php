@@ -147,9 +147,7 @@ function genUID(){
     return vsprintf('%s%s%s%s%s%s%s%s', str_split(bin2hex($data), 4));
 }
 
-
-
 // 获取图片显示路径
-function picPath($file){
-    return Yii::$app->params["file_upload"].substr($file,0,2)."/".$file;
+function showPic($file){
+    return Yii::$app->params["backaddress"]."/".Yii::$app->params["file_upload"].substr($file,0,2)."/".$file;
 }

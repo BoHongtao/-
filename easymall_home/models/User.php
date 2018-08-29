@@ -1,16 +1,9 @@
 <?php
 
 namespace app\models;
-/**
- * This is the model class for table "user".
- *
- * @property integer $id
- * @property string $username
- * @property string $userpwd
- * @property string $mail
- * @property string $phone
- */
-class User extends Base
+use Yii;
+
+class User extends Base implements \yii\web\IdentityInterface
 {
     public $repwd;
     /**
@@ -28,7 +21,7 @@ class User extends Base
     {
         return [
             [['username', 'userpwd'], 'required'],
-            ['userpwd','compare','compareAttribute' => 'repwd','message'=>'与密码输入不一致'],
+            ['userpwd','compare','compareAttribute' => 'repwd','message'=>'与密码输入不一致','on'=>'register'],
             [['username', 'mail'], 'string', 'max' => 255],
             [['userpwd'], 'string', 'max' => 128],
             [['phone'], 'string', 'max' => 32],
@@ -54,4 +47,39 @@ class User extends Base
             'last_login_time'=>'上次登录时间'
         ];
     }
+
+    public static function login($username) {
+        $model = User::find()->where(['username' => $username])->one();
+        return $model;
+    }
+
+    public function validatePassword($inputPwd, $pwd) {
+        if (Yii::$app->getSecurity()->validatePassword($inputPwd, $pwd)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static function findIdentity($id) {
+        $user = User::find()->where(['id' => $id])->one();
+        $distor = null;
+        return $user;
+    }
+
+    public function getAuthKey() {
+
+    }
+    public static function findIdentityByAccessToken($token, $type = null) {
+
+    }
+    public function getId() {
+        return $this->id;
+    }
+
+    public function validateAuthKey($authKey) {
+
+    }
+
+
 }
