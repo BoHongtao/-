@@ -1,9 +1,6 @@
 <?php
 
 namespace app\models;
-
-use Yii;
-
 /**
  * This is the model class for table "goods_type".
  *
@@ -29,8 +26,8 @@ class GoodsType extends Base
     public function rules()
     {
         return [
-            [['type', 'pic_id','logo_id'], 'required'],
-            [['pic_id', 'order','logo_id'], 'integer'],
+            [['type', 'pic_id','logo'], 'required'],
+            [['pic_id', 'order'], 'integer'],
             [['type'], 'string', 'max' => 60],
         ];
     }
@@ -46,14 +43,14 @@ class GoodsType extends Base
             'pic_id' => '图片id',
             'order' => '权重',
             'file'=>'类型主图',
-            'logo'=>'logo'
+            'logo'=>'所属大类',
         ];
     }
+
     public static function getPic($result)
     {
         if (!$result) return [];
         foreach ($result as $k=>&$v){
-            $v['logo'] = Pictures::find()->where(['id'=>$v['logo_id']])->asArray()->one();
             $v['pic'] = Pictures::find()->where(['id'=>$v['pic_id']])->asArray()->one();
         }
         return $result;

@@ -7,7 +7,6 @@
  */
 ?>
 <link rel="stylesheet" type="text/css" href="static/css/reset.css">
-
 <div class="search_bar clearfix">
     <a href="index.html" class="logo fl"><img src="static/images/logo.png"></a>
     <div class="search_con fl">
@@ -34,12 +33,14 @@
 
 <div class="center_con clearfix">
     <ul class="subnav fl">
-        <li><a href="#model01" class="fruit">新鲜水果</a></li>
-        <li><a href="#model02" class="seafood">海鲜水产</a></li>
-        <li><a href="#model03" class="meet">猪牛羊肉</a></li>
-        <li><a href="#model04" class="egg">禽类蛋品</a></li>
-        <li><a href="#model05" class="vegetables">新鲜蔬菜</a></li>
-        <li><a href="#model06" class="ice">速冻食品</a></li>
+        <?php foreach ($good_type as $k=>$v): ?>
+            <li><a href="#model01" class="<?=$v['logo']?>"><?= $v['type'] ?></a></li>
+<!--            <li><a href="#model02" class="seafood">海鲜水产</a></li>-->
+<!--            <li><a href="#model03" class="meet">猪牛羊肉</a></li>-->
+<!--            <li><a href="#model04" class="egg">禽类蛋品</a></li>-->
+<!--            <li><a href="#model05" class="vegetables">新鲜蔬菜</a></li>-->
+<!--            <li><a href="#model06" class="ice">速冻食品</a></li>-->
+        <?php endforeach; ?>
     </ul>
     <div class="slide fl">
         <ul class="slide_pics">
