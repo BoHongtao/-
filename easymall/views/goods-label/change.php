@@ -21,17 +21,33 @@ use yii\bootstrap\ActiveForm;
                 <!-- left column -->
                 <div class="span9 with-sidebar">
                     <div class="container">
-                        <?php $form = ActiveForm::begin([
-                            'id' => 'add-label',
-                            'options' => [
-                                'class' => 'new_user_form inline-input'
-                            ],
-                            'fieldConfig' => [
-                                'template' => "<div class='span12 field-box'>{label}{input}{error}</div> <div>{hint}</div>",
-                            ],
-                            'enableAjaxValidation' => true,
-                            'validationUrl' => Url::toRoute('goods-label/validate')
-                        ]); ?>
+                        <?php if($id==''){
+                            $form = ActiveForm::begin([
+                                'id' => 'add-label',
+                                'options' => [
+                                    'class' => 'new_user_form inline-input'
+                                ],
+                                'fieldConfig' => [
+                                    'template' => "<div class='span12 field-box'>{label}{input}{error}</div> <div>{hint}</div>",
+                                ],
+                                'enableAjaxValidation' => true,
+                                'validationUrl' => Url::toRoute('goods-label/validate')
+                            ]);
+                        }else{
+                            $form = ActiveForm::begin([
+                                'id' => 'add-label',
+                                'options' => [
+                                    'class' => 'new_user_form inline-input'
+                                ],
+                                'fieldConfig' => [
+                                    'template' => "<div class='span12 field-box'>{label}{input}{error}</div> <div>{hint}</div>",
+                                ],
+                                'enableAjaxValidation' => true,
+                                'validationUrl' => Url::toRoute(['goods-label/validate','id'=>$id])
+                            ]);
+                        }
+
+                        ?>
                     </div>
                 </div>
                 <?= $form->field($model, 'label_name')->textInput(['placeholder' => '标签名称', 'class' => 'span9']); ?>

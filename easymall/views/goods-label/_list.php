@@ -36,7 +36,8 @@
                     <td><?= $v['label_name'] ?></td>
                     <td><?= $v['sort'] ?></td>
                     <td>
-                        <span class="label label-warning" id="<?=$v['id']?>" data-type="del">删除</span>
+                        <a href="<?= \yii\helpers\Url::toRoute(['goods-label/change','id'=>$v['id']]) ?>"><span class="label label-success">编辑</span></a>
+                        <span class="label label-warning" data-type="del" id="<?=$v['id']?>">删除</span>
                     </td>
                 </tr>
             <?php endforeach; ?>
