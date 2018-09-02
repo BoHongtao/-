@@ -65,7 +65,7 @@ use yii\helpers\Url;
                                 <td>
                                     <ul class="actions">
                                         <?php if (\app\components\Utils::checkAccess("menu/update")): ?>
-                                            <li><a href="<?= Url::toRoute(['menu/update', 'id' => $vo['id']]) ?>">编辑</a></li>
+                                            <li><a href="<?= Url::toRoute(['menu/update', 'id' => $vo['id']]) ?>"><span class="label label-success">编辑</span></a></li>
                                         <?php endif; ?>
                                         <?php if (\app\components\Utils::checkAccess("menu/delete")): ?>
                                             <li class="last"><span class="label label-warning" id="<?=$vo['id']?>" data-type="del">删除</span></li>
@@ -86,7 +86,7 @@ use yii\helpers\Url;
                                             <td>
                                                 <ul class="actions">
                                                     <?php if (\app\components\Utils::checkAccess("menu/update")): ?>
-                                                        <li><a href="<?= Url::toRoute(['menu/update', 'id' => $v['id']]) ?>">编辑</a></li>
+                                                        <li><a href="<?= Url::toRoute(['menu/update', 'id' => $v['id']]) ?>"><span class="label label-success">编辑</span></a></li>
                                                     <?php endif; ?>
                                                     <?php if (\app\components\Utils::checkAccess("menu/delete")): ?>
                                                         <li class="last"><span class="label label-warning" id="<?=$v['id']?>" data-type="del">删除</span></li>
@@ -107,7 +107,7 @@ use yii\helpers\Url;
                                                     <td>
                                                         <ul class="actions">
                                                             <?php if (\app\components\Utils::checkAccess("menu/update")): ?>
-                                                                <li><a href="<?= Url::toRoute(['menu/update', 'id' => $v3['id']]) ?>">编辑</a></li>
+                                                                <li><a href="<?= Url::toRoute(['menu/update', 'id' => $v3['id']]) ?>"><span class="label label-success">编辑</span></a></li>
                                                             <?php endif; ?>
                                                             <?php if (\app\components\Utils::checkAccess("menu/delete")): ?>
                                                                 <li class="last"><span class="label label-warning" id="<?=$v3['id']?>" data-type="del">删除</span></li>
