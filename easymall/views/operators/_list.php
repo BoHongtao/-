@@ -51,8 +51,8 @@ use app\components\AjaxPager;
                 </td>
                 <td>
                     <span class="label label-info" data-type="changepwd" id="<?=$operator['id']?>">重置密码</span>
+                    <a href="<?= \yii\helpers\Url::toRoute(['operators/update','operator_id'=>$operator['id']])?>"><span class="label label-success">编辑</span></a>
                     <span class="label label-warning" data-type="del" id="<?=$operator['id']?>">删除</span>
-                    <a href="<?= \yii\helpers\Url::toRoute(['operators/update','operator_id'=>$operator['id']])?>" class="label label-success">编辑</a>
                 </td>
             </tr>
             <div id="changepassword<?= $operator['id'] ?>" style="display: none;padding: 20px;">

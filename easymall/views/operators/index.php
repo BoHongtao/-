@@ -33,7 +33,6 @@ use yii\helpers\Url;
 <?php $this->beginBlock('script') ?>
 <script src="static/js/bootstrap.min.js"></script>
 <script src="static/js/theme.js"></script>
-<script src="static/layer/layui.js"></script>
 <script>
     layui.use('layer', function(){
         var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
