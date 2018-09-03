@@ -5,6 +5,7 @@
  * Date: 2018/8/7
  * Time: 16:52
  */
+use app\components\AjaxPager;
 ?>
 <link rel="stylesheet" href="static/css/compiled/user-list.css" type="text/css" media="screen"/>
 <div class="row-fluid table">
@@ -43,3 +44,11 @@
             <?php endforeach; ?>
         <?php endif; ?>
         </tbody>
+    </table>
+</div>
+<div class="pagination pull-right">
+    <?php echo AjaxPager::widget([
+        'pagination' => $pager
+    ]);
+    ?>
+</div>

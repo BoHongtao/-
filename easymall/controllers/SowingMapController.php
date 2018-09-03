@@ -14,6 +14,9 @@ use yii\web\UploadedFile;
 
 class SowingMapController extends BaseController
 {
+    /*
+     * 首页
+     */
     public function actionIndex(){
         return $this->render('index');
     }
@@ -21,7 +24,9 @@ class SowingMapController extends BaseController
      * 轮播图的展示和列表
      */
     public function actionData(){
-        $info = SowingMap::find()->asArray()->all();
+        $query = SowingMap::find();
+        $pager = $this->Pager($query,'sowing-map/data');
+        $info = $query->limit($pager->limit)->offset($pager->offset)->asArray()->all();
         return $this->renderPartial('_list',[
             'info'=>$info
         ]);

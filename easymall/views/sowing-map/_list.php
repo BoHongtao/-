@@ -5,6 +5,7 @@
  * Date: 2018/8/6
  * Time: 13:45
  */
+use app\components\AjaxPager;
 ?>
 <!--轮播图展示-->
 <div class="layui-carousel" id="test1" lay-filter="test1">
@@ -35,4 +36,11 @@
             </tr>
         <?php endforeach; ?>
     </table>
+</div>
+
+<div class="pagination pull-right">
+    <?php echo AjaxPager::widget([
+        'pagination' => $pager
+    ]);
+    ?>
 </div>
