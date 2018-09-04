@@ -15,15 +15,15 @@ use yii\bootstrap\ActiveForm;
     <div class="container-fluid">
         <div id="pad-wrapper" class="new-user">
             <div class="row-fluid header">
-                <h3>添加新的标签</h3>
+                <h3>添加新的供货商</h3>
             </div>
             <div class="row-fluid form-wrapper">
                 <!-- left column -->
                 <div class="span9 with-sidebar">
                     <div class="container">
-                        <?php if($id==''){
+                        <?php if($supplier_id==''){
                             $form = ActiveForm::begin([
-                                'id' => 'add-label',
+                                'id' => 'change-supplier',
                                 'options' => [
                                     'class' => 'new_user_form inline-input'
                                 ],
@@ -31,11 +31,11 @@ use yii\bootstrap\ActiveForm;
                                     'template' => "<div class='span12 field-box'>{label}{input}{error}</div> <div>{hint}</div>",
                                 ],
                                 'enableAjaxValidation' => true,
-                                'validationUrl' => Url::toRoute('goods-label/validate')
+                                'validationUrl' => Url::toRoute('supplier/validate')
                             ]);
                         }else{
                             $form = ActiveForm::begin([
-                                'id' => 'add-label',
+                                'id' => 'change-supplier',
                                 'options' => [
                                     'class' => 'new_user_form inline-input'
                                 ],
@@ -43,16 +43,17 @@ use yii\bootstrap\ActiveForm;
                                     'template' => "<div class='span12 field-box'>{label}{input}{error}</div> <div>{hint}</div>",
                                 ],
                                 'enableAjaxValidation' => true,
-                                'validationUrl' => Url::toRoute(['goods-label/validate','id'=>$id])
+                                'validationUrl' => Url::toRoute(['supplier/validate','supplier_id'=>$supplier_id])
                             ]);
                         }
-
                         ?>
                     </div>
                 </div>
-                <?= $form->field($model, 'label_name')->textInput(['placeholder' => '标签名称', 'class' => 'span9']); ?>
-                <?= $form->field($model, 'sort')->dropDownList(['0' => '0', '1' => '1', '2' => '2', '3' => '3', '4' => '4'], ['class' => 'span9']) ?>
-
+                <?= $form->field($model, 'supplier_name')->textInput(['placeholder' => '供货商名称', 'class' => 'span9']); ?>
+                <?= $form->field($model, 'link_name')->textInput(['placeholder' => '联系人', 'class' => 'span9']); ?>
+                <?= $form->field($model, 'link_tel')->textInput(['placeholder' => '联系人电话', 'class' => 'span9']); ?>
+                <?= $form->field($model, 'link_address')->textInput(['placeholder' => '联系人地址', 'class' => 'span9']); ?>
+                <?= $form->field($model, 'desc')->textarea(['placeholder' => '描述', 'class' => 'span9']); ?>
                 <div class="span11 field-box actions">
                     <?= Html::submitButton('创建', ['class' => 'btn-glow primary', 'name' => 'submit-button', 'id' => 'manager-add-btn']) ?>
                     <span>OR</span>
@@ -76,19 +77,19 @@ use yii\bootstrap\ActiveForm;
     /*
      * ajax提交
      */
-    $(document).on("beforeSubmit", "#add-label", function () {
+    $(document).on("beforeSubmit", "#change-supplier", function () {
         $('#manager-add-btn').html('提交中');
         $('#manager-add-btn').attr('disabled', true);
         $('#manager-cancle-btn').attr('disabled', true);
 
-        $('#add-label').ajaxSubmit({
-            url: $('#add-label').attr('action'),
+        $('#change-supplier').ajaxSubmit({
+            url: $('#change-supplier').attr('action'),
             type: 'post',
-            data: $('#add-label').serialize(),
+            data: $('#change-supplier').serialize(),
             success: function (data) {
                 if (data.code == 200) {
                     layer.msg('添加成功');
-                    setTimeout('window.location.href="<?= Url::toRoute(['goods-label/index']) ?>"', 1500);
+                    setTimeout('window.location.href="<?= Url::toRoute(['supplier/index']) ?>"', 1500);
                 } else {
                     layer.msg('添加失败');
                     $('#manager-add-btn').html('确定');

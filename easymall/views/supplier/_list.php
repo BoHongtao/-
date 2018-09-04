@@ -37,7 +37,6 @@ use app\components\AjaxPager;
         </thead>
 
         <tbody>
-        <!-- row -->
         <?php foreach ($supplierInfo as $key => $supplier): ?>
             <tr class="first">
                 <td width="10%"><?= $key + 1 + $pager->offset ?></td>
@@ -57,12 +56,11 @@ use app\components\AjaxPager;
                     <?=  $supplier['desc'] ?>
                 </td>
                 <td>
-                    <a href="<?= \yii\helpers\Url::toRoute(['supplier/update','operator_id'=>$supplier['id']])?>"><span class="label label-success">编辑</span></a>
+                    <a href="<?= \yii\helpers\Url::toRoute(['supplier/change','supplier_id'=>$supplier['id']])?>"><span class="label label-success">编辑</span></a>
                     <span class="label label-warning" data-type="del" id="<?= $supplier['id']?>">删除</span>
                 </td>
             </tr>
         <?php endforeach; ?>
-        <!-- row -->
         </tbody>
     </table>
 </div>
