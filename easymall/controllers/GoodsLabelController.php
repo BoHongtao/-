@@ -56,15 +56,16 @@ class GoodsLabelController extends BaseController{
      */
     public function actionDel()
     {
-        $id = Yii::$app->request->post('id');
-        $this->returnJson();
-        if($id=='')
-            return ['code'=>0,'msg'=>"非法参数"];
-        $goodslabel = GoodsLabel::findOne(['id'=>$id]);
-        $this->returnJson();
-        if(GoodsLabel::deleteAll(['id'=>$id]))
-            return ['code'=>200];
-        return ['code'=>0,'msg'=>$this->getMsg($goodslabel)];
+        if(Yii::$app->request->isAjax){
+            $id = Yii::$app->request->post('id');
+            $this->returnJson();
+            if($id=='')
+                return ['code'=>0,'msg'=>"非法参数"];
+            $goodslabel = GoodsLabel::findOne(['id'=>$id]);
+            if(GoodsLabel::deleteAll(['id'=>$id]))
+                return ['code'=>200];
+            return ['code'=>0,'msg'=>$this->getMsg($goodslabel)];
+        }
     }
 
     public function actionValidate($id='')
