@@ -28,7 +28,8 @@ class SowingMapController extends BaseController
         $pager = $this->Pager($query,'sowing-map/data');
         $info = $query->limit($pager->limit)->offset($pager->offset)->asArray()->all();
         return $this->renderPartial('_list',[
-            'info'=>$info
+            'info'=>$info,
+            'pager'=>$pager
         ]);
     }
     /*
