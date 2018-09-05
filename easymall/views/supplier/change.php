@@ -64,8 +64,6 @@ use yii\bootstrap\ActiveForm;
         </div>
     </div>
 </div>
-
-
 <?php $this->beginBlock('script'); ?>
 <script>
     /*
@@ -88,10 +86,10 @@ use yii\bootstrap\ActiveForm;
             data: $('#change-supplier').serialize(),
             success: function (data) {
                 if (data.code == 200) {
-                    layer.msg('添加成功');
+                    layer.msg('变更成功');
                     setTimeout('window.location.href="<?= Url::toRoute(['supplier/index']) ?>"', 1500);
                 } else {
-                    layer.msg('添加失败');
+                    layer.msg('变更失败');
                     $('#manager-add-btn').html('确定');
                     $('#manager-add-btn').attr('disabled', false);
                     $('#manager-cancle-btn').attr('disabled', false);
