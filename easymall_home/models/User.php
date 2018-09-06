@@ -27,7 +27,7 @@ class User extends Base implements \yii\web\IdentityInterface
             [['userpwd'], 'string', 'max' => 128],
             [['phone'], 'string', 'max' => 32],
             [['username','phone'],'unique'],
-            [['is_vip'],'safe']
+            [['is_vip','is_first_login'],'safe']
         ];
     }
 
@@ -43,6 +43,7 @@ class User extends Base implements \yii\web\IdentityInterface
             'repwd' => '确认密码',
             'phone' => '电话',
             'is_vip'=>'是否VIP',
+            'is_first_login'=>'是否首次登陆'
         ];
     }
 

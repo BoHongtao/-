@@ -9,6 +9,7 @@ namespace app\controllers;
 
 use app\models\LoginForm;
 use app\models\User;
+use app\models\UserDetail;
 use Yii;
 
 class UserController extends BaseController
@@ -45,6 +46,7 @@ class UserController extends BaseController
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             $users = Yii::$app->user->identity;
+
             return $this->redirect(['home/index']);
         }
         return $this->render('login', [
