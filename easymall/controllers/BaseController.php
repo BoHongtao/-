@@ -6,11 +6,13 @@
  * Time: 16:21
  */
 namespace app\controllers;
+
 use Yii;
 use yii\web\Controller;
 use app\components\Utils;
 
-class BaseController extends Controller{
+class BaseController extends Controller
+{
     public $pageSize;
 
     public function init()
@@ -23,12 +25,12 @@ class BaseController extends Controller{
         parent::beforeAction($action);
         if (Yii::$app->user->isGuest) {
             $this->redirect(['site/login'])->send();
-            die ();
+            die();
         } else {
             $authname = Yii::$app->controller->id . '/' . Yii::$app->controller->action->id;
             if (!Utils::checkAccess($authname)) {
-                throw new ForbiddenHttpException ("对不起，您现在还没获此操作的权限");
-                exit ();
+                throw new ForbiddenHttpException("对不起，您现在还没获此操作的权限");
+                exit();
             }
         }
         return true;
@@ -49,7 +51,7 @@ class BaseController extends Controller{
     // pagination
     public function Pager($model, $route)
     {
-        return new \yii\data\Pagination ([
+        return new \yii\data\Pagination([
             'totalCount' => $model->count(),
             'pageSize' => $this->pageSize,
             'route' => $route
@@ -58,14 +60,18 @@ class BaseController extends Controller{
     /*
      * 是否post请求
      */
-    public function isPost(){
-        if(Yii::$app->request->isPost)
+    public function isPost()
+    {
+        if (Yii::$app->request->isPost) {
             return true;
+        }
         return false;
     }
-    public function isAjax(){
-        if(Yii::$app->request->isAjax)
+    public function isAjax()
+    {
+        if (Yii::$app->request->isAjax) {
             return true;
+        }
         return false;
     }
 }

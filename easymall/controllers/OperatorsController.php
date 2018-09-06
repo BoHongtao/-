@@ -24,12 +24,12 @@ class OperatorsController extends BaseController
     {
         //获取管理员及关联管理员的信息
         $query = Operators::find()->joinWith('operatorinfos')->filterWhere(['like', 'operator_name', $operator_name]);
-        $pager = $this->Pager($query,'operators/data');
+        $pager = $this->Pager($query, 'operators/data');
         $OperatorsInfos = $query->offset($pager->offset)->limit($pager->limit)->asArray()->all();
         //角色id与角色名字映射关系
         $role = Yii::$app->authManager->getRoles();
         $role = array_column($role, "description", "type");
-        return $this->renderPartial('_list',[
+        return $this->renderPartial('_list', [
             'OperatorsInfos'=>$OperatorsInfos,
             'pager'=>$pager,
             'role'=>$role
@@ -43,18 +43,19 @@ class OperatorsController extends BaseController
     {
         $operator = new Operators();
         $operator_info = new OperatorsInfo();
-        if(Yii::$app->request->isAjax && $operator->load(Yii::$app->request->post())){
+        if (Yii::$app->request->isAjax && $operator->load(Yii::$app->request->post())) {
             $this->returnJson();
             //开始事务
             $tr = Yii::$app->db->beginTransaction();
-            try{
+            try {
                 //登陆密码哈希处理
                 $operator->password =  Yii::$app->getSecurity()->generatePasswordHash($operator->password);
-                $operator->file = UploadedFile::getInstance($operator,'file');
+                $operator->file = UploadedFile::getInstance($operator, 'file');
                 $operator->operator_type = 1;
                 $operator->file and $operator_info->head_pic = $operator->upload();
-                if(!$operator->save(false))
+                if (!$operator->save(false)) {
                     throw new Exception($this->getMsg($operator));
+                }
                 //管理员详细信息入库
                 $new_operator_id = $operator->id;
                 $operator_info->operator_id = $new_operator_id;
@@ -63,20 +64,22 @@ class OperatorsController extends BaseController
                 $operator_info->wechat = $operator->wechat;
                 $operator_info->email = $operator->email;
                 $operator_info->contact_phone = $operator->contact_phone;
-                if (!$operator_info->save())
+                if (!$operator_info->save()) {
                     throw new \Exception($this->getMsg($operator_info));
+                }
                 $tr->commit();
                 return ['code'=>200];
-            }catch (\Exception $exception){
+            } catch (\Exception $exception) {
                 $tr->rollBack();
                 $msg = $exception->getMessage();
                 return ['code'=>0,'msg'=>$msg];
             }
         }
         $roles = $operator->getRoles();
-        foreach ($roles as $k=>$v)
+        foreach ($roles as $k=>$v) {
             $data[$v['type']] = $v['name'];
-        return $this->render('add',[
+        }
+        return $this->render('add', [
             'model'=>$operator,
             'roles' =>$data
         ]);
@@ -85,22 +88,27 @@ class OperatorsController extends BaseController
      * 删除管理员
      * @param id post方式接收被删除管理员id
      */
-    public function actionDel(){
-        if(Yii::$app->request->isAjax){
+    public function actionDel()
+    {
+        if (Yii::$app->request->isAjax) {
             $this->returnJson();
             $id = Yii::$app->request->post('id');
-            if($id==1) return ['code'=>0,'desc'=>'系统管理员无法删除'];
+            if ($id==1) {
+                return ['code'=>0,'desc'=>'系统管理员无法删除'];
+            }
             //开始事务
             $tr = Yii::$app->db->beginTransaction();
-            try{
+            try {
                 //删除主表operators
-                if(Operators::deleteAll(['id'=>$id])!==1)
+                if (Operators::deleteAll(['id'=>$id])!==1) {
                     throw new Exception("删除主表信息失败");
-                if(OperatorsInfo::deleteAll(['operator_id'=>$id])!==1)
+                }
+                if (OperatorsInfo::deleteAll(['operator_id'=>$id])!==1) {
                     throw new Exception("删除副表信息失败");
+                }
                 $tr->commit();
                 return ['code'=>200];
-            }catch (\Exception $e){
+            } catch (\Exception $e) {
                 $tr->rollBack();
                 $msg = $e->getMessage();
                 return ['code'=>0,'msg'=>$msg];
@@ -114,7 +122,7 @@ class OperatorsController extends BaseController
     {
         $operator = Operators::findOne(['id'=>$operator_id]);
         $operator_info = OperatorsInfo::findOne(['operator_id'=>$operator_id]);
-        if(Yii::$app->request->isPost){
+        if (Yii::$app->request->isPost) {
             $this->returnJson();
             $data = Yii::$app->request->post();
             $operator->operator_name = $data['Operators']['operator_name'];
@@ -123,24 +131,26 @@ class OperatorsController extends BaseController
             $operator_info->contact_phone = $data['OperatorsInfo']['contact_phone'];
             $operator_info->wechat = $data['OperatorsInfo']['wechat'];
             $operator_info->company = $data['OperatorsInfo']['company'];
-            $operator_info->file = UploadedFile::getInstance($operator_info,'file');
+            $operator_info->file = UploadedFile::getInstance($operator_info, 'file');
             $operator_info->file and $operator_info->head_pic = $operator_info->upload();
 
             $tr = Yii::$app->db->beginTransaction();
-            try{
-                if(!$operator->save())
+            try {
+                if (!$operator->save()) {
                     throw new Exception("更新主表失败");
-                if(!$operator_info->save())
+                }
+                if (!$operator_info->save()) {
                     throw new Exception("更新副表失败");
+                }
                 $tr->commit();
                 return ['code'=>200];
-            }catch (\Exception $e){
+            } catch (\Exception $e) {
                 $tr->rollBack();
                 $msg = $e->getMessage();
                 return ['code'=>0,'msg'=>$msg];
             }
         }
-        return $this->render('update',[
+        return $this->render('update', [
             'operator'=>$operator,
             'operator_info'=>$operator_info,
             'id'=>$operator_id,
@@ -163,13 +173,14 @@ class OperatorsController extends BaseController
      */
     public function actionChangepwd()
     {
-        if(Yii::$app->request->isAjax){
+        if (Yii::$app->request->isAjax) {
             $this->returnJson();
             $id = Yii::$app->request->post('id');
             $new_pwd = Yii::$app->request->post('pwd');
             $new_pwd_hash = Yii::$app->getSecurity()->generatePasswordHash($new_pwd);
-            if(Operators::updateAll(['password'=>$new_pwd_hash],['id'=>$id]))
+            if (Operators::updateAll(['password'=>$new_pwd_hash], ['id'=>$id])) {
                 return ['code'=>200];
+            }
             return ['code'=>0];
         }
     }
@@ -225,6 +236,4 @@ class OperatorsController extends BaseController
 //        return ['code'=>0,'data'=>''];
 ////        return false;
 //    }
-
-
 }

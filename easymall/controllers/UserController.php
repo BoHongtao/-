@@ -6,6 +6,7 @@
  * Time: 20:37
  */
 namespace app\controllers;
+
 use Yii;
 
 class UserController extends BaseController
@@ -15,13 +16,12 @@ class UserController extends BaseController
      */
     public function actionIndex()
     {
-
     }
+
     /*
      * 用户列表
      */
     public function actionData()
     {
-
     }
 }

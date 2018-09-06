@@ -8,8 +8,10 @@
  */
 namespace app\controllers;
 
-class HomeController extends BaseController{
-    public function actionIndex(){
+class HomeController extends BaseController
+{
+    public function actionIndex()
+    {
         return $this->render('index');
     }
 }

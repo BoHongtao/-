@@ -13,8 +13,10 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 
-class SiteController extends Controller {
-    public function behaviors() {
+class SiteController extends Controller
+{
+    public function behaviors()
+    {
         return [
             'access' => [
                 'class' => AccessControl::className(),
@@ -38,7 +40,8 @@ class SiteController extends Controller {
         ];
     }
 
-    public function actions() {
+    public function actions()
+    {
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -57,15 +60,16 @@ class SiteController extends Controller {
     }
 
     //登录
-    public function actionLogin(){
+    public function actionLogin()
+    {
         $this->layout = 'main_login';
         //是否登录
-        if(!Yii::$app->user->isGuest){
+        if (!Yii::$app->user->isGuest) {
             $this->actionMenu();
         }
         //没登录
         $model = new LoginVerity();
-        if($model->load(Yii::$app->request->post()) && $model->login()){
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
             $user = Yii::$app->user->identity;
             //保存登录信息
             $user->record_time = date('Y-m-d H:i:s');
@@ -73,24 +77,29 @@ class SiteController extends Controller {
             $user->save();
             return $this->redirect(['home/index']);
         }
-        return $this->render('login',[
+        return $this->render('login', [
             'model'=>$model
         ]);
     }
     //登录成功后的跳转页面
-    public function actionMenu(){
+    public function actionMenu()
+    {
         $menus = login();
-        foreach ($menus as $value){
-            if(!isset($value['_child']))   return $this->redirect([$value['route']]);
-            foreach ($value['_child'] as $val){
-                if($val['display'] == 2) return $this->redirect([$val['route']]);
+        foreach ($menus as $value) {
+            if (!isset($value['_child'])) {
+                return $this->redirect([$value['route']]);
+            }
+            foreach ($value['_child'] as $val) {
+                if ($val['display'] == 2) {
+                    return $this->redirect([$val['route']]);
+                }
             }
         }
     }
 
-    public function actionLogout() {
+    public function actionLogout()
+    {
         Yii::$app->user->logout();
         return $this->redirect(\yii\helpers\Url::to(['site/login']));
     }
-
 }

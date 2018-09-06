@@ -9,7 +9,9 @@ namespace app\controllers;
 
 use app\models\GoodsLabel;
 use Yii;
-class GoodsLabelController extends BaseController{
+
+class GoodsLabelController extends BaseController
+{
     /*
      * 首页
      */
@@ -17,64 +19,70 @@ class GoodsLabelController extends BaseController{
     {
         return $this->render('index');
     }
+
     /*
      * 展示list
      */
     public function actionData()
     {
         $query = GoodsLabel::find();
-        $pager = $this->Pager($query,'goods-label/data');
+        $pager = $this->Pager($query, 'goods-label/data');
         $labelInfo = $query->offset($pager->offset)->limit($pager->limit)->asArray()->all();
-        return $this->renderPartial('_list',[
-            'labelInfo'=>$labelInfo,
-            'pager'=>$pager
+        return $this->renderPartial('_list', [
+            'labelInfo' => $labelInfo,
+            'pager' => $pager
         ]);
     }
+
     /*
      * 添加和编辑标签
      */
     public function actionChange($id = '')
     {
-        $id and $model = GoodsLabel::findOne(['id'=>$id]) or $model = new GoodsLabel();
-        if(Yii::$app->request->isPost){
+        $id and $model = GoodsLabel::findOne(['id' => $id]) or $model = new GoodsLabel();
+        if (Yii::$app->request->isPost) {
             $this->returnJson();
             $data = Yii::$app->request->post();
-            if(!$model->load($data))
-                return ['code'=>0,'msg'=>$this->getMsg($model)];
+            if (!$model->load($data)) {
+                return ['code' => 0, 'msg' => $this->getMsg($model)];
+            }
             $id and $model->id = $id;
-            if(!$model->save())
-                return ['code'=>0,'msg'=>$this->getMsg($model)];
-            return ['code'=>200];
+            if (!$model->save()) {
+                return ['code' => 0, 'msg' => $this->getMsg($model)];
+            }
+            return ['code' => 200];
         }
-        return $this->render('change',[
-            'model'=>$model,
+        return $this->render('change', [
+            'model' => $model,
             'id' => $id
         ]);
     }
+
     /*
      * 删除标签
      */
     public function actionDel()
     {
-        if(Yii::$app->request->isAjax){
+        if (Yii::$app->request->isAjax) {
             $id = Yii::$app->request->post('id');
             $this->returnJson();
-            if($id=='')
-                return ['code'=>0,'msg'=>"非法参数"];
-            $goodslabel = GoodsLabel::findOne(['id'=>$id]);
-            if(GoodsLabel::deleteAll(['id'=>$id]))
-                return ['code'=>200];
-            return ['code'=>0,'msg'=>$this->getMsg($goodslabel)];
+            if ($id == '') {
+                return ['code' => 0, 'msg' => "非法参数"];
+            }
+            $goodslabel = GoodsLabel::findOne(['id' => $id]);
+            if (GoodsLabel::deleteAll(['id' => $id])) {
+                return ['code' => 200];
+            }
+            return ['code' => 0, 'msg' => $this->getMsg($goodslabel)];
         }
     }
 
-    public function actionValidate($id='')
+    public function actionValidate($id = '')
     {
-        $id and $type = GoodsLabel::findOne(['id'=>$id]) or $type = new GoodsLabel();
+        $id and $type = GoodsLabel::findOne(['id' => $id]) or $type = new GoodsLabel();
         if ($type->load(Yii::$app->request->post())) {
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
             return \yii\bootstrap\ActiveForm::validate($type);
         }
     }
-
 }
