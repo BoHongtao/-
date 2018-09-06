@@ -7,6 +7,7 @@
  */
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
+
 ?>
 <div class="register_con">
     <div class="l_con fl">
@@ -22,11 +23,10 @@ use yii\helpers\Url;
         <div class="reg_form clearfix">
             <?php $form = ActiveForm::begin(); ?>
                 <ul>
-                    <li><?= $form->field($model,'username')->textInput(['id'=>'user_name'])?></li>
-                    <li><?= $form->field($model,'userpwd')->passwordInput(['id'=>'pwd'])?></li>
-                    <li><?= $form->field($model,'repwd')->passwordInput(['id'=>'cpwd'])?></li>
-                    <li><?= $form->field($model,'mail')->textInput(['id'=>'email'])?></li>
-                    <li><?= $form->field($model,'phone')->textInput()?></li>
+                    <li><?= $form->field($model, 'username')->textInput(['id'=>'user_name'])?></li>
+                    <li><?= $form->field($model, 'userpwd')->passwordInput(['id'=>'pwd'])?></li>
+                    <li><?= $form->field($model, 'repwd')->passwordInput(['id'=>'cpwd'])?></li>
+                    <li><?= $form->field($model, 'phone')->textInput()?></li>
                     <li class="agreement">
                         <input type="checkbox" name="allow" id="allow" checked="checked">
                         <label>同意”天天生鲜用户使用协议“</label>

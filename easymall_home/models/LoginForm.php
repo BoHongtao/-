@@ -18,7 +18,8 @@ class LoginForm extends Model
             ['userpwd', 'validatePassword'],
         ];
     }
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'username' => '用户名',
             'userpwd' => '密码',
@@ -28,7 +29,7 @@ class LoginForm extends Model
     {
         if (!$this->hasErrors()) {
             $user = $this->getSysUser();
-            if (!$user || (!$user->validatePassword($this->userpwd,$user->userpwd))) {
+            if (!$user || (!$user->validatePassword($this->userpwd, $user->userpwd))) {
                 $this->addError($attribute, '密码错误');
             }
         }
@@ -36,7 +37,9 @@ class LoginForm extends Model
 
     public function login()
     {
-        if ($this->validate()) return Yii::$app->user->login($this->getSysUser(), 0);
+        if ($this->validate()) {
+            return Yii::$app->user->login($this->getSysUser(), 0);
+        }
         return false;
     }
 
@@ -48,7 +51,8 @@ class LoginForm extends Model
         return $this->_sysUser;
     }
 
-    public function getAuthKey(){
+    public function getAuthKey()
+    {
         return \Yii::$app->security->generateRandomString();
     }
 }
