@@ -7,6 +7,7 @@
  */
 namespace app\controllers;
 
+use app\models\User;
 use Yii;
 
 class UserController extends BaseController
@@ -16,6 +17,7 @@ class UserController extends BaseController
      */
     public function actionIndex()
     {
+        return $this->render('index');
     }
 
     /*
@@ -23,5 +25,12 @@ class UserController extends BaseController
      */
     public function actionData()
     {
+        $query = User::find();
+        $pager = $this->Pager($query, 'user/data');
+        $userInfo = $query->offset($pager->offset)->limit($pager->limit)->asArray()->all();
+        return $this->renderPartial('_list', [
+            'userInfo'=>$userInfo,
+            'pager'=>$pager
+        ]);
     }
 }
