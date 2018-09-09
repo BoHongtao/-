@@ -15,7 +15,7 @@ use app\components\AjaxPager;
                 <span class="line"></span>头像
             </th>
             <th class="span2 sortable">
-                <span class="line"></span>角色
+                <span class="line"></span>所属组
             </th>
             <th class="span2 sortable">
                 <span class="line"></span>真实姓名

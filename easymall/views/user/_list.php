@@ -6,6 +6,7 @@
  * Time: 21:19
  */
 use app\components\AjaxPager;
+
 ?>
 <link rel="stylesheet" href="static/css/compiled/user-list.css" type="text/css" media="screen" />
 <div class="row-fluid table">

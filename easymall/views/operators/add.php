@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
+
 ?>
 <link rel="stylesheet" href="static/css/compiled/new-user.css" type="text/css" media="screen" />
 
@@ -26,15 +27,15 @@ use yii\bootstrap\ActiveForm;
                             'enableAjaxValidation' => true,
                             'validationUrl' => Url::toRoute('operators/validate')
                         ]); ?>
-                        <?= $form->field($model,'operator_name')->textInput(['class' => 'span9']) ?>
-                        <?= $form->field($model,'password')->textInput(['class' => 'span9']) ?>
-                        <?= $form->field($model, 'role_id')->dropDownList($roles,['prompt' => '----请选择角色----']) ?>
-                        <?= $form->field($model,'true_name')->textInput(['class' => 'span9']) ?>
-                        <?= $form->field($model,'email')->textInput(['class' => 'span9']) ?>
-                        <?= $form->field($model,'contact_phone')->textInput(['class' => 'span9']) ?>
-                        <?= $form->field($model,'wechat')->textInput(['class' => 'span9']) ?>
-                        <?= $form->field($model,'company')->textInput(['class' => 'span9']) ?>
-                        <?= $form->field($model,'file')->fileInput(['class' => 'span9']) ?>
+                        <?= $form->field($model, 'operator_name')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($model, 'password')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($model, 'role_id')->dropDownList($roles, ['prompt' => '----请选择用户组----']) ?>
+                        <?= $form->field($model, 'true_name')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($model, 'email')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($model, 'contact_phone')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($model, 'wechat')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($model, 'company')->textInput(['class' => 'span9']) ?>
+                        <?= $form->field($model, 'file')->fileInput(['class' => 'span9']) ?>
                         <div class="span11 field-box actions">
                             <?= Html::submitButton('Create user', ['class' => 'btn-glow primary','name'=>'submit-button','id' => 'manager-add-btn']) ?>
                             <span>OR</span>

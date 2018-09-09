@@ -15,7 +15,7 @@ use yii\bootstrap\ActiveForm;
     <div class="container-fluid">
         <div id="pad-wrapper" class="new-user">
             <div class="row-fluid header">
-                <h3>添加新的角色</h3>
+                <h3>添加新的组</h3>
             </div>
             <div class="row-fluid form-wrapper">
                 <!-- left column -->

@@ -6,333 +6,292 @@
  * Time: 9:50
  */
 ?>
+    <style type="text/css">
+        #container-fluid li{
+            list-style:none;
+        }
+        #web_info li{
+            display: inline;
+            height: 25px;
+            line-height: 25px;
+            padding-left: 10px;
+            font-family: Arial, "Microsoft YaHei", 黑体, 宋体, sans-serif;
+            font-size: 13px;
+        }
+        #container-fluid{
+            background-color: #F6F6F6;
+        }
+
+
+    </style>
     <!-- libraries -->
-    <link href="static/css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
-    <link href="static/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+    <link href="static/css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css"/>
+    <link href="static/css/lib/font-awesome.css" type="text/css" rel="stylesheet"/>
+
+
+    <link href="static/css/dashboard.css" type="text/css" rel="stylesheet"/>
+    <link href="static/css/ns_index.css" type="text/css" rel="stylesheet"/>
+
+
     <!-- this page specific styles -->
-    <link rel="stylesheet" href="static/css/compiled/index.css" type="text/css" media="screen" />
+<!--    <link rel="stylesheet" href="static/css/compiled/index.css" type="text/css" media="screen"/>-->
     <div class="content">
-    <div class="container-fluid">
-        <!-- upper main stats -->
-        <div id="main-stats">
-            <div class="row-fluid stats-row">
-                <div class="span3 stat">
-                    <div class="data">
-                        <span class="number">2457</span>
-                        个访客
-                    </div>
-                    <span class="date">今天</span>
-                </div>
-                <div class="span3 stat">
-                    <div class="data">
-                        <span class="number">3240</span>
-                        个用户
-                    </div>
-                    <span class="date">2016年3月</span>
-                </div>
-                <div class="span3 stat">
-                    <div class="data">
-                        <span class="number">322</span>
-                        个订单
-                    </div>
-                    <span class="date">本周</span>
-                </div>
-                <div class="span3 stat last">
-                    <div class="data">
-                        <span class="number">$2,340</span>
-                        成交金额
-                    </div>
-                    <span class="date">最近30天</span>
-                </div>
+    <div class="container-fluid" id="container-fluid">
+        <div class="ns-notice">
+            <nav>
+                <ul id="web_info">
+                    <li>网站名称：<span><?= Yii::$app->params['web_name'] ?></span></li>
+                    <li>当前版本：<span>单商户基础版1.0</span></li>
+                    <li>登录时间：<span><?= $user->record_time ?></span></li>
+                    <li>登录IP：<span><?= long2ip($user->last_login_ip) ?></span></li>
+                </ul>
+            </nav>
+        </div>
+        <div style="position:relative;margin:10px 0;">
+            <!-- 三级导航菜单 -->
+
+
+            <div class="right-side-operation">
+                <ul>
+
+
+                </ul>
             </div>
         </div>
-        <!-- end upper main stats -->
+        <!-- 操作提示 -->
 
-        <div id="pad-wrapper">
+        <div class="ns-main">
 
-            <!-- statistics chart built with jQuery Flot -->
-            <div class="row-fluid chart">
-                <h4>
-                    统计
-                    <div class="btn-group pull-right">
-                        <button class="glow left">天</button>
-                        <button class="glow middle active">月</button>
-                        <button class="glow right">年</button>
-                    </div>
-                </h4>
-                <div class="span12">
-                    <div id="statsChart"></div>
-                </div>
-            </div>
-            <!-- end statistics chart -->
-
-            <!-- table sample -->
-            <!-- the script for the toggle all checkboxes from header is located in js/theme.js -->
-            <div class="table-products section">
-                <div class="row-fluid head">
-                    <div class="span12">
-                        <h4>商品列表</h4>
-                    </div>
-                </div>
-
-                <div class="row-fluid filter-block">
-                    <div class="pull-right">
-                        <div class="ui-select">
-                            <select>
-                                <option />过滤用户
-                                <option />最近30天注册的
-                                <option />已激活的用户
-                            </select>
+            <div class="statistical">
+                <ul>
+                    <li>
+                        <div class="left">
+                            <img src="static/img/order_amount.png"/>
                         </div>
-                        <input type="text" class="search" />
-                        <a class="btn-flat new-product">+ 添加商品</a>
-                    </div>
-                </div>
+                        <div class="right">
+                            <strong class="js-order-amount">0.00</strong>
+                            <p>今日订单总金额(元)</p>
+                        </div>
+                    </li>
 
-                <div class="row-fluid">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th class="span3">
-                                <input type="checkbox" />
-                                商品名称
-                            </th>
-                            <th class="span3">
-                                <span class="line"></span>商品描述
-                            </th>
-                            <th class="span3">
-                                <span class="line"></span>商品状态
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <!-- row -->
-                        <tr class="first">
-                            <td>
-                                <input type="checkbox" />
-                                <div class="img">
-                                    <img src="static/img/table-img.png" />
-                                </div>
-                                <a href="#">There are many variations </a>
-                            </td>
-                            <td class="description">
-                                if you are going to use a passage of Lorem Ipsum.
-                            </td>
-                            <td>
-                                <span class="label label-success">Active</span>
-                                <ul class="actions">
-                                    <li><i class="table-edit"></i></li>
-                                    <li><i class="table-settings"></i></li>
-                                    <li class="last"><i class="table-delete"></i></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <!-- row -->
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                                <div class="img">
-                                    <img src="static/img/table-img.png" />
-                                </div>
-                                <a href="#">Internet tend</a>
-                            </td>
-                            <td class="description">
-                                There are many variations of passages.
-                            </td>
-                            <td>
-                                <ul class="actions">
-                                    <li><i class="table-edit"></i></li>
-                                    <li><i class="table-settings"></i></li>
-                                    <li class="last"><i class="table-delete"></i></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <!-- row -->
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                                <div class="img">
-                                    <img src="static/img/table-img.png" />
-                                </div>
-                                <a href="#">Many desktop publishing </a>
-                            </td>
-                            <td class="description">
-                                if you are going to use a passage of Lorem Ipsum.
-                            </td>
-                            <td>
-                                <ul class="actions">
-                                    <li><i class="table-edit"></i></li>
-                                    <li><i class="table-settings"></i></li>
-                                    <li class="last"><i class="table-delete"></i></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <!-- row -->
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                                <div class="img">
-                                    <img src="static/img/table-img.png" />
-                                </div>
-                                <a href="#">Generate Lorem </a>
-                            </td>
-                            <td class="description">
-                                There are many variations of passages.
-                            </td>
-                            <td>
-                                <span class="label label-info">Standby</span>
-                                <ul class="actions">
-                                    <li><i class="table-edit"></i></li>
-                                    <li><i class="table-settings"></i></li>
-                                    <li class="last"><i class="table-delete"></i></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <!-- row -->
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                                <div class="img">
-                                    <img src="static/img/table-img.png" />
-                                </div>
-                                <a href="#">Internet tend</a>
-                            </td>
-                            <td class="description">
-                                There are many variations of passages.
-                            </td>
-                            <td>
-                                <ul class="actions">
-                                    <li><i class="table-edit"></i></li>
-                                    <li><i class="table-settings"></i></li>
-                                    <li class="last"><i class="table-delete"></i></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="pagination">
+                    <li>
+                        <div class="left">
+                            <img src="static/img/goods_release.png"/>
+                        </div>
+                        <div class="right">
+                            <strong class="js-goods-release-count">0</strong>
+                            <p>商品发布(个)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left">
+                            <img src="static/img/order_total.png"/>
+                        </div>
+                        <div class="right">
+                            <strong class="js-order-total">0</strong>
+                            <p>订单总数(笔)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left">
+                            <img src="static/img/month_sales.png"/>
+                        </div>
+                        <div class="right">
+                            <strong class="js-month-sales">0</strong>
+                            <p>本月销量(笔)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left">
+                            <img src="static/img/finish_count.png"/>
+                        </div>
+                        <div class="right">
+                            <strong class="js-order-finish-count">0</strong>
+                            <p>已完成交易(笔)</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="charts" style="display:none">
+                <h3>
+                    <i class="i-circular"></i>关注人数统计<span><i></i>关注人数</span>
+                </h3>
+                <div id="focusCharts"></div>
+            </div>
+            <div class="goods-prompt">
+                <h3>
+                    <i class="i-circular"></i>店铺及商品提示<span>您需要关注的店铺信息以及待处理事项</span>
+                </h3>
+                <div class="goods-state a-line">
                     <ul>
-                        <li><a href="#">&#8249;</a></li>
-                        <li><a class="active" href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">&#8250;</a></li>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/goods/goodslist">
+                                <strong class="goods_sale_count">0</strong>
+                                <span>出售中</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/goods/goodslist">
+                                <strong class="goods_audit_count">0</strong>
+                                <span>仓库中</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/saleservice/consultlist&type=to_reply">
+                                <strong class="goods_consult_count">0</strong>
+                                <span>待回复咨询</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/goods/goodslist">
+                                <strong class="stock_early_warning">0</strong>
+                                <span>库存预警</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-
             </div>
-            <!-- end table sample -->
+
+            <div class="sales">
+                <h3>
+                    <i class="i-circular"></i>销售情况统计<span>按周期统计商家店铺的订单量和订单金额</span>
+                </h3>
+
+                <table>
+                    <tr>
+                        <td colspan="2" align="left" style="padding: 10px 0 0 20px;">昨日销量</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong class="yesterday_goods">0</strong>
+                            <span>订单量(件)</span>
+                        </td>
+                        <td>
+                            <strong class="yesterday_money">0</strong>
+                            <span>订单金额(元)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="left" style="padding: 15px 0 0 20px;">本月销量</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong class="month_goods">0</strong>
+                            <span>订单量(件)</span>
+                        </td>
+                        <td>
+                            <strong class="month_money">0</strong>
+                            <span>订单金额(元)</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="goods-prompt">
+                <h3>
+                    <i class="i-circular"></i>交易提示<span>您需要立即处理的交易订单</span>
+                </h3>
+                <div class="goods-state a-line order">
+                    <ul>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/order/orderlist&status=0">
+                                <strong class="daifukuan">0</strong>
+                                <span>待付款</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/order/orderlist&status=1">
+                                <strong class="daifahuo">0</strong>
+                                <span>待发货</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/order/orderlist&status=2">
+                                <strong class="yifahuo">0</strong>
+                                <span>已发货</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/order/orderlist&status=3">
+                                <strong class="yishouhuo">0</strong>
+                                <span>已收货</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/order/orderlist&status=4">
+                                <strong class="yiwancheng">0</strong>
+                                <span>已完成</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/order/orderlist&status=5">
+                                <strong class="yiguanbi">0</strong>
+                                <span>已关闭</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/order/orderlist&status=-1">
+                                <strong class="tuikuanzhong">0</strong>
+                                <span>退款中</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sales-ranking">
+                <h3>
+                    <i class="i-circular"></i>单品销售排名<span>按周期统计商家店铺的订单量和订单金额</span>
+                </h3>
+                <table>
+                    <tr>
+                        <td>排行</td>
+                        <td style="text-align: left;">商品信息</td>
+                        <td>销量</td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <div class="charts">
+                <h3>
+                    <i class="i-circular"></i>订单总数统计<span><i></i>订单数量</span>
+                </h3>
+                <div id="orderCharts"></div>
+            </div>
+
+
+            <div class="goods-prompt">
+                <h3>
+                    <i class="i-circular"></i>商家帮助<span>您需要的商家帮助</span>
+                </h3>
+                <div class="merchants-use">
+                    <ul>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/goods/goodslist"><img
+                                        src="static/img/goods_management.png"/><span>商品管理</span></a>
+                        </li>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/promotion/coupontypelist"><img
+                                        src="static/img/promotions.png"/><span>促销方式</span></a>
+                        </li>
+                        <li>
+                            <a href="http://www.space.com/niushop_b2b2c_1.11/niushop_b2b2c//index.php?s=/admin/order/orderlist"><img
+                                        src="static/img/order_after.png"/><span>订单及售后</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
 
-<?php $this->beginBlock('script') ?>
+    <?php $this->beginBlock('script') ?>
+    <script src="static/js/index.js"></script>
+    <script src="static/js/highcharts.js"></script>
+    <script src="static/js/exporting.js"></script>
+    <script src="static/js/jquery.timers.js"></script>
     <script type="text/javascript">
-        $(function () {
-            // jQuery Knobs
-            $(".knob").knob();
-            // jQuery UI Sliders
-            $(".slider-sample1").slider({
-                value: 100,
-                min: 1,
-                max: 500
-            });
-            $(".slider-sample2").slider({
-                range: "min",
-                value: 130,
-                min: 1,
-                max: 500
-            });
-            $(".slider-sample3").slider({
-                range: true,
-                min: 0,
-                max: 500,
-                values: [ 40, 170 ],
-            });
-            // jQuery Flot Chart
-            var visits = [[1, 50], [2, 40], [3, 45], [4, 23],[5, 55],[6, 65],[7, 61],[8, 70],[9, 65],[10, 75],[11, 57],[12, 59]];
-            var visitors = [[1, 25], [2, 50], [3, 23], [4, 48],[5, 38],[6, 40],[7, 47],[8, 55],[9, 43],[10,50],[11,47],[12, 39]];
 
-            var plot = $.plot($("#statsChart"),
-                [ { data: visits, label: "注册量"},
-                    { data: visitors, label: "访客量" }], {
-                    series: {
-                        lines: { show: true,
-                            lineWidth: 1,
-                            fill: true,
-                            fillColor: { colors: [ { opacity: 0.1 }, { opacity: 0.13 } ] }
-                        },
-                        points: { show: true,
-                            lineWidth: 2,
-                            radius: 3
-                        },
-                        shadowSize: 0,
-                        stack: true
-                    },
-                    grid: { hoverable: true,
-                        clickable: true,
-                        tickColor: "#f9f9f9",
-                        borderWidth: 0
-                    },
-                    legend: {
-                        // show: false
-                        labelBoxBorderColor: "#fff"
-                    },
-                    colors: ["#a7b5c5", "#30a0eb"],
-                    xaxis: {
-                        ticks: [[1, "一月"], [2, "二月"], [3, "三月"], [4,"四月"], [5,"五月"], [6,"六月"],
-                            [7,"七月"], [8,"八月"], [9,"九月"], [10,"十月"], [11,"十一月"], [12,"十二月"]],
-                        font: {
-                            size: 12,
-                            family: "Open Sans, Arial",
-                            variant: "small-caps",
-                            color: "#697695"
-                        }
-                    },
-                    yaxis: {
-                        ticks:3,
-                        tickDecimals: 0,
-                        font: {size:12, color: "#9da3a9"}
-                    }
-                });
-
-            function showTooltip(x, y, contents) {
-                $('<div id="tooltip">' + contents + '</div>').css( {
-                    position: 'absolute',
-                    display: 'none',
-                    top: y - 30,
-                    left: x - 50,
-                    color: "#fff",
-                    padding: '2px 5px',
-                    'border-radius': '6px',
-                    'background-color': '#000',
-                    opacity: 0.80
-                }).appendTo("body").fadeIn(200);
-            }
-
-            var previousPoint = null;
-            $("#statsChart").bind("plothover", function (event, pos, item) {
-                if (item) {
-                    if (previousPoint != item.dataIndex) {
-                        previousPoint = item.dataIndex;
-
-                        $("#tooltip").remove();
-                        var x = item.datapoint[0].toFixed(0),
-                            y = item.datapoint[1].toFixed(0);
-
-                        var month = item.series.xaxis.ticks[item.dataIndex].label;
-
-                        showTooltip(item.pageX, item.pageY,
-                            item.series.label + " of " + month + ": " + y);
-                    }
-                }
-                else {
-                    $("#tooltip").remove();
-                    previousPoint = null;
-                }
-            });
-        });
     </script>
 <?php $this->endBlock(); ?>

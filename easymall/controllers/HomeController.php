@@ -8,10 +8,18 @@
  */
 namespace app\controllers;
 
+use app\models\Operators;
+use Yii;
+
 class HomeController extends BaseController
 {
     public function actionIndex()
     {
-        return $this->render('index');
+        //登陆用户信息
+        $user_id = Yii::$app->user->id;
+        $userInfo = Operators::find()->where(['id'=>$user_id])->one();
+        return $this->render('index', [
+            'user'=>$userInfo
+        ]);
     }
 }

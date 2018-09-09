@@ -7,11 +7,11 @@ use yii\helpers\Url;
     <div class="container-fluid">
         <div id="pad-wrapper" class="users-list">
             <div class="row-fluid header">
-                <h3>角色管理</h3>
+                <h3>用户组管理</h3>
                 <div class="span10 pull-right">
                     <a href="<?= Url::toRoute(['role/create-role'])?>" class="btn-flat success pull-right">
                         <span>&#43;</span>
-                        新建角色
+                        新建用户组
                     </a>
                 </div>
             </div>
@@ -21,7 +21,7 @@ use yii\helpers\Url;
                     <thead>
                         <tr>
                             <th class="span4 sortable">
-                                <span class="line"></span> 角色名
+                                <span class="line"></span> 组名
                             </th>
                             <th class="span3 sortable">
                                 <span class="line"></span>描述
