@@ -23,9 +23,9 @@ class UserController extends BaseController
     /*
      * 用户列表
      */
-    public function actionData()
+    public function actionData($user_name = '')
     {
-        $query = User::find();
+        $query = User::find()->filterWhere(['username'=>$user_name]);
         $pager = $this->Pager($query, 'user/data');
         $userInfo = $query->offset($pager->offset)->limit($pager->limit)->asArray()->all();
         return $this->renderPartial('_list', [
