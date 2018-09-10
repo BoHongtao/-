@@ -30,7 +30,7 @@ use app\components\AjaxPager;
         <tbody>
         <?php foreach ($typeInfo as $key => $v): ?>
             <tr class="first">
-                <td width="10%"><?= $key + 1 ?></td>
+                <td width="10%"><?= $key + 1 + $pager->offset ?></td>
                 <td><?= $v['type'] ?></td>
                 <td><?php echo isset($v['pic']['filename']) ? $v['pic']['filename'] : '暂无图片' ?></td>
                 <td>
