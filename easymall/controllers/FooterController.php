@@ -6,6 +6,7 @@
  * Time: 21:20
  */
 namespace app\controllers;
+
 use app\models\Footer;
 use Yii;
 
