@@ -1,2 +1,2 @@
 # easymall
-基于Yii的后台购物商城
+online market base on Yii2.0
