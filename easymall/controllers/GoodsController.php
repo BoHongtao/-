@@ -9,6 +9,7 @@ namespace app\controllers;
 
 use app\models\Goods;
 use app\models\GoodsType;
+use app\models\Supplier;
 use Yii;
 
 class GoodsController extends BaseController
@@ -40,6 +41,19 @@ class GoodsController extends BaseController
      */
     public function actionAddGood()
     {
-        die;
+        //获取商品的类型
+        $typeInfo = GoodsType::find()->select('id,type')->asArray()->all();
+        //获取商品的供应商
+        $supplierInfo = Supplier::find()->select('id,supplier_name')->asArray()->all();
+        $goods = new Goods();
+        if (Yii::$app->request->isPost) {
+            $data = Yii::$app->request->post();
+
+        }
+        return $this->render('add', [
+            'typeInfo'=>$typeInfo,
+            'supplierInfo'=>$supplierInfo,
+            'goods'=>$goods
+        ]);
     }
 }
