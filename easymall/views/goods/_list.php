@@ -8,6 +8,12 @@
 use app\components\AjaxPager;
 ?>
 <link rel="stylesheet" href="static/css/compiled/user-list.css" type="text/css" media="screen"/>
+<div align="left">
+    <a href="<?= \yii\helpers\Url::toRoute(['goods/add-good'])?>" class="btn-flat success">
+        <span>&#43;</span>
+        发布商品
+    </a>
+</div>
 <div align="right">
     <form action="">
         <input type="text" name="good_name" placeholder="要搜索的商品名称">
