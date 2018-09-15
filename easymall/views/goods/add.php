@@ -60,6 +60,8 @@ use yii\bootstrap\ActiveForm;
                         <?= $form->field($goods, 'count_sale')->textInput(['placeholer' => '基础销量'])  ?>
                         <?= $form->field($goods, 'count_total')->textInput(['placeholer' => '总库存'])  ?>
                         <?= $form->field($goods, 'count_warning')->textInput(['placeholer' => '库存预警'])  ?>
+                        <?= $form->field($goods, 'is_sale')->radioList(['0' => '不上架','1'=>'上架'])->inline() ?>
+                        <?= $form->field($goods, '')?>
                         <div class="span11 field-box actions">
                             <?= Html::submitButton('Create user', ['class' => 'btn-glow primary','name'=>'submit-button','id' => 'manager-add-btn']) ?>
                             <span>OR</span>
