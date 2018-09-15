@@ -22,3 +22,15 @@ use yii\helpers\Url;
         </div>
     </div>
 </div>
+
+<?php $this->beginBlock('script'); ?>
+<script>
+    var ue = UE.getEditor('good_desc',{toolbars: [[
+        'bold', 'italic', 'underline', 'fontborder', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+        'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+        'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+        'directionalityltr', 'directionalityrtl', 'indent', '|',
+        'imagenone', 'imageleft', 'imageright', 'imagecenter', '|', 'emotion'
+    ]]});
+</script>
+<?php $this->endBlock(); ?>

@@ -8,6 +8,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
+
 ?>
 
 <link rel="stylesheet" href="static/css/compiled/new-user.css" type="text/css" media="screen" />
@@ -35,7 +36,30 @@ use yii\bootstrap\ActiveForm;
                         ]); ?>
                         <?= $form->field($goods, 'good_name')->textInput(['placeholder' => '商品名称', 'class' => 'span9']); ?>
                         <?= $form->field($goods, 'good_type')->dropDownList($typeInfo, ['class' => 'span9','prompt' => '--请选择级别--']) ?>
-                        <?= $form->field($goods, 'good_key_word')->textInput(['placeholder' => '商品名称关键词', 'class' => 'span9']); ?>
+                        <?= $form->field($goods, 'good_type')->dropDownList($supplierInfo, ['class' => 'span9','prompt' => '--请选择供应商--']) ?>
+                        <?= $form->field($goods, 'good_key_word')->textInput(['placeholder' => '商品名称关键词,用于SEO搜索', 'class' => 'span9']); ?>
+                        商品描述
+                        <?= $form->field($goods, 'good_desc')->widget('common\widgets\ueditor\Ueditor', [
+                            'options'=>[
+                                'initialFrameWidth' => 850,
+                                'placeholder' => '商品描述',
+                                'id'=>'good_desc',
+//                                'toolbars'=> [[
+//                                    'bold', 'italic', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+//                                    'rowspacingtop', '|',
+//                                    'customstyle', 'paragraph', 'fontfamily', 'fontsize',
+//                                    'directionalityltr', 'directionalityrtl', 'indent', '|',
+//                                    'imagenone', 'imageleft', 'imageright', 'imagecenter', '|', 'emotion'
+//                                ]]
+                            ],
+
+                        ]) ?>
+                        <?= $form->field($goods, 'price_market')->textInput(['placeholer' => '市场价格'])  ?>
+                        <?= $form->field($goods, 'price_sale')->textInput(['placeholer' => '销售价格'])  ?>
+                        <?= $form->field($goods, 'price_cost')->textInput(['placeholer' => '成本价格'])  ?>
+                        <?= $form->field($goods, 'count_sale')->textInput(['placeholer' => '基础销量'])  ?>
+                        <?= $form->field($goods, 'count_total')->textInput(['placeholer' => '总库存'])  ?>
+                        <?= $form->field($goods, 'count_warning')->textInput(['placeholer' => '库存预警'])  ?>
                         <div class="span11 field-box actions">
                             <?= Html::submitButton('Create user', ['class' => 'btn-glow primary','name'=>'submit-button','id' => 'manager-add-btn']) ?>
                             <span>OR</span>
@@ -53,12 +77,6 @@ use yii\bootstrap\ActiveForm;
                     <h6>添加管理员注意事项:</h6>
                     <p>尽可能使用复杂密码</p>
                     <p>密码切勿外泄</p>
-                    <p>建议复制使用密码生成器生成密码:</p>
-                    <p>
-                    <div style="border: 2px dashed black;line-height: 20px;height: 20px;text-align:center;width: 140px;display: inline-block" id="random_password"></div>
-                    <button class="btn" data-clipboard-action="copy" data-clipboard-target="#random_password" style="margin-left: 8px;">复制</button>
-                    </p>
-                    <p onclick="generate_again()">点击重新生成</p>
                 </div>
             </div>
         </div>
