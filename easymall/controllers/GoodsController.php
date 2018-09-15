@@ -43,12 +43,14 @@ class GoodsController extends BaseController
     {
         //获取商品的类型
         $typeInfo = GoodsType::find()->select('id,type')->asArray()->all();
+        $typeInfo and $typeInfo = array_column($typeInfo, 'type', 'id') or $typeInfo = [];
         //获取商品的供应商
         $supplierInfo = Supplier::find()->select('id,supplier_name')->asArray()->all();
+        $supplierInfo and $supplierInfo = array_column($supplierInfo, 'supplier_name', 'id') or $supplierInfo = [];
+
         $goods = new Goods();
         if (Yii::$app->request->isPost) {
             $data = Yii::$app->request->post();
-
         }
         return $this->render('add', [
             'typeInfo'=>$typeInfo,

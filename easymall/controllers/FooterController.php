@@ -25,7 +25,7 @@ class FooterController extends BaseController
     public function actionData()
     {
         $query = Footer::find();
-        $pager = $this->Pager($query, 'footer/data');
+        $pager = $this->setPager($query, 'footer/data');
         $footerInfo = $query->offset($pager->offset)->limit($pager->limit)->asArray()->all();
         return $this->renderPartial('_list', [
             'footerInfo'=>$footerInfo,

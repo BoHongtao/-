@@ -29,7 +29,7 @@ class GoodTypeController extends BaseController
     public function actionData($typename = '')
     {
         $query = GoodsType::find();
-        $pager = $this->Pager($query, 'goods-type/data');
+        $pager = $this->setPager($query, 'goods-type/data');
         $typeInfo = $query->offset($pager->offset)->limit($pager->limit)->filterWhere(['type' => $typename])->asArray()->all();
         $typeInfo = GoodsType::getPic($typeInfo);
         return $this->renderPartial('_list', [

@@ -15,6 +15,20 @@ class BaseController extends Controller
 {
     public $pageSize;
 
+    public function actions()
+    {
+        return [
+            'ueditor'=>[
+                'class' => 'common\widgets\ueditor\UeditorAction',
+                'config'=>[
+                    //上传图片配置
+                    'imageUrlPrefix' => "", /* 图片访问路径前缀 */
+                    'imagePathFormat' => "/image/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
+                ]
+            ]
+        ];
+    }
+
     public function init()
     {
         parent::init();
@@ -49,7 +63,7 @@ class BaseController extends Controller
     }
 
     // pagination
-    public function Pager($model, $route)
+    public function setPager($model, $route)
     {
         return new \yii\data\Pagination([
             'totalCount' => $model->count(),

@@ -25,7 +25,7 @@ class SupplierController extends BaseController
     public function actionData()
     {
         $query = Supplier::find();
-        $pager = $this->Pager($query, 'supplier/data');
+        $pager = $this->setPager($query, 'supplier/data');
         $supplierInfo = $query->offset($pager->offset)->limit($pager->limit)->asArray()->all();
         return $this->renderPartial('_list', [
             'supplierInfo'=>$supplierInfo,

@@ -26,7 +26,7 @@ class GoodsLabelController extends BaseController
     public function actionData()
     {
         $query = GoodsLabel::find();
-        $pager = $this->Pager($query, 'goods-label/data');
+        $pager = $this->setPager($query, 'goods-label/data');
         $labelInfo = $query->offset($pager->offset)->limit($pager->limit)->asArray()->all();
         return $this->renderPartial('_list', [
             'labelInfo' => $labelInfo,

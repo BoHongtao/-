@@ -24,7 +24,7 @@ class OperatorsController extends BaseController
     {
         //获取管理员及关联管理员的信息
         $query = Operators::find()->joinWith('operatorinfos')->filterWhere(['like', 'operator_name', $operator_name]);
-        $pager = $this->Pager($query, 'operators/data');
+        $pager = $this->setPager($query, 'operators/data');
         $OperatorsInfos = $query->offset($pager->offset)->limit($pager->limit)->asArray()->all();
         //角色id与角色名字映射关系
         $role = Yii::$app->authManager->getRoles();
