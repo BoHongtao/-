@@ -47,6 +47,10 @@ return [
             'defaultRoles' => ['系统管理员'],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        //配置缓存组件
+        'cache'=>[
+            'class'=>'yii\caching\FileCache'
+        ]
     ],
     'params' => $params,
 ];
