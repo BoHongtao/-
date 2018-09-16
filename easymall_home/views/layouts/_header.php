@@ -7,7 +7,7 @@ use yii\helpers\Url;
     <div class="header">
         <div class="welcome fl">
             <?php if (!Yii::$app->user->isGuest) {echo Yii::$app->user->identity->username .",";} ?>
-            <?php if (!Yii::$app->user->isGuest) {?><a href="<?php echo Url::toRoute(['user/logout']) ?>">退出</a><?php} ?> 欢迎来到天天生鲜 !
+            <?php if (!Yii::$app->user->isGuest) {?><a href="<?php echo Url::toRoute(['user/logout']) ?>">退出</a><?php } ?> 欢迎来到天天生鲜 !
         </div>
         <div class="fr">
             <?php if (Yii::$app->user->isGuest): ?>
