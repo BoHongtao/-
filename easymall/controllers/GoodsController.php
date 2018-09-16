@@ -28,7 +28,7 @@ class GoodsController extends BaseController
     {
         $query = Goods::find()->filterWhere(['good_name'=>$good_name])->filterWhere(['good_type'=>$type]);
         $goodType = GoodsType::find()->select('id,type')->asArray()->all();
-        $pager = $this->Pager($query, 'goods-label/data');
+        $pager = $this->setPager($query, 'goods-label/data');
         $goodsInfo = $query->offset($pager->offset)->limit($pager->limit)->asArray()->all();
         return $this->renderPartial('_list', [
             'goodsInfo'=>$goodsInfo,

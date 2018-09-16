@@ -29,7 +29,10 @@ use yii\bootstrap\ActiveForm;
                                 'class' => 'new_user_form inline-input'
                             ],
                             'fieldConfig' => [
-                                'template' => "<div class='span12 field-box'>{label}{input}{error}</div> <div>{hint}</div>",
+                                'template' => "<div class='span12 field-box'>{label}{input}{error}</div>",
+                                'labelOptions' => [
+                                    'class' => 'col-xs-2 control-label'
+                                ]
                             ],
                             'enableAjaxValidation' => true,
                             'validationUrl' => Url::toRoute('goods/validate')
@@ -38,7 +41,7 @@ use yii\bootstrap\ActiveForm;
                         <?= $form->field($goods, 'good_type')->dropDownList($typeInfo, ['class' => 'span9','prompt' => '--请选择级别--']) ?>
                         <?= $form->field($goods, 'good_type')->dropDownList($supplierInfo, ['class' => 'span9','prompt' => '--请选择供应商--']) ?>
                         <?= $form->field($goods, 'good_key_word')->textInput(['placeholder' => '商品名称关键词,用于SEO搜索', 'class' => 'span9']); ?>
-                        商品描述
+                        <b>商品描述</b>
                         <?= $form->field($goods, 'good_desc')->widget('common\widgets\ueditor\Ueditor', [
                             'options'=>[
                                 'initialFrameWidth' => 850,
@@ -52,7 +55,6 @@ use yii\bootstrap\ActiveForm;
 //                                    'imagenone', 'imageleft', 'imageright', 'imagecenter', '|', 'emotion'
 //                                ]]
                             ],
-
                         ]) ?>
                         <?= $form->field($goods, 'price_market')->textInput(['placeholer' => '市场价格'])  ?>
                         <?= $form->field($goods, 'price_sale')->textInput(['placeholer' => '销售价格'])  ?>
@@ -60,8 +62,8 @@ use yii\bootstrap\ActiveForm;
                         <?= $form->field($goods, 'count_sale')->textInput(['placeholer' => '基础销量'])  ?>
                         <?= $form->field($goods, 'count_total')->textInput(['placeholer' => '总库存'])  ?>
                         <?= $form->field($goods, 'count_warning')->textInput(['placeholer' => '库存预警'])  ?>
-                        <?= $form->field($goods, 'is_sale')->radioList(['0' => '不上架','1'=>'上架'])->inline() ?>
-                        <?= $form->field($goods, '')?>
+                        <?= $form->field($goods, 'is_sale')->inline()->radioList(["隐藏","显示"]) ?>
+                        <?= $form->field($goods, 'good_label')->textInput(['placeholer' => '标签值'])?>
                         <div class="span11 field-box actions">
                             <?= Html::submitButton('Create user', ['class' => 'btn-glow primary','name'=>'submit-button','id' => 'manager-add-btn']) ?>
                             <span>OR</span>
