@@ -26,6 +26,7 @@ class UserController extends BaseController
             $user->userpwd = Yii::$app->getSecurity()->generatePasswordHash($user->userpwd);
             if ($user->save(false)) {
                 //暂时返回到首页
+                //计划是完善用户信息，然后跳转首页
                 $this->redirect(['home/index'])->send();
                 return false;
             }
@@ -53,6 +54,16 @@ class UserController extends BaseController
             'model'=>$model
         ]);
     }
+    /*
+     * 用户注销
+     */
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+        return $this->redirect(\yii\helpers\Url::to(['home/index']));
+    }
+
+
     /*
      * 验证
      */
