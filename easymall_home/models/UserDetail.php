@@ -33,6 +33,7 @@ class UserDetail extends Base
             [['user_id', 'user_bp'], 'integer'],
             [['last_login_time'], 'safe'],
             [['user_mail', 'last_login_ip'], 'string', 'max' => 32],
+            [['user_add'], 'string', 'max' => 255],
         ];
     }
 
@@ -47,6 +48,7 @@ class UserDetail extends Base
             'user_mail' => '用户邮箱',
             'last_login_ip' => '上次登陆IP',
             'last_login_time' => '上次登陆时间',
+            'user_add'=>'收货地址'
         ];
     }
 }

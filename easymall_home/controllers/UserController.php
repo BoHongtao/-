@@ -55,12 +55,36 @@ class UserController extends BaseController
         ]);
     }
     /*
+     *  用户中心
+     */
+    public function actionUserCenter($userId = '')
+    {
+        if ($userId != '') {
+            //查询用户的基本及详细信息
+            $userInfo = User::find()->select(['user.*','user_detail.*'])->where(['id'=>$userId])->leftJoin('user_detail', 'user.id=user_detail.user_id')->asArray()->all();
+            return $this->render('center', [
+                'userInfo'=>$userInfo
+            ]);
+        }
+    }
+
+    /*
      * 用户注销
      */
     public function actionLogout()
     {
         Yii::$app->user->logout();
         return $this->redirect(\yii\helpers\Url::to(['home/index']));
+    }
+
+    /*
+     * 用户丰富自己的信息
+     */
+    public function actionUpdateUserInfo($id = '')
+    {
+        if ($id != '') {
+            $user_detail = UserDetail::findOne(['user_id'=>$id]);
+        }
     }
 
 
