@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+
 $controller = Yii::$app->controller->id;
 $action = Yii::$app->controller->action->id;
 $cations = $controller . '/' . $action;

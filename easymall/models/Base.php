@@ -6,25 +6,30 @@
  * Time: 8:55
  */
 namespace app\models;
+
 use yii\db\ActiveRecord;
 
-class Base extends  ActiveRecord{
-
+class Base extends ActiveRecord
+{
     public $file;
     //上传单个文件
     public function upload()
     {
-        if (!$this->file) return;
+        if (!$this->file) {
+            return;
+        }
         $uploadinfo = $this->getUploadInfo($this->file->extension);
-        if($this->file->saveAs($uploadinfo['path'].$uploadinfo['name']))
+        if ($this->file->saveAs($uploadinfo['path'].$uploadinfo['name'])) {
             return $uploadinfo['name'];
+        }
         return false;
     }
 
     // 返回上传文件信息
-    function getUploadInfo($extension){
+    public function getUploadInfo($extension)
+    {
         $name = getUuid().'.'.$extension;
-        $folder = substr($name,0,2);
+        $folder = substr($name, 0, 2);
         $path = __DIR__.'/../web/uploads/'.$folder.'/';
         createFolder($path);
         return [
